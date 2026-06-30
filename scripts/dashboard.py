@@ -11,7 +11,7 @@ from components.metrics import show_metrics
 from components.charts import show_charts
 from components.prompt_explorer import show_prompt_explorer
 from components.insights import show_competitors, show_insights
-
+from components.executive_summary import show_executive_summary
 
 st.set_page_config(
     page_title="Wake Tech AI Search Intelligence",
@@ -43,6 +43,9 @@ filtered = df[
     df["category"].isin(selected_categories)
 ]
 
+show_executive_summary(filtered)
+
+st.divider()
 show_metrics(filtered)
 
 st.divider()
