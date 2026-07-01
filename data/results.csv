@@ -1,4 +1,110 @@
 run_date,platform,prompt_id,category,prompt,wake_tech_mentioned,position,competitors,wake_tech_url,competitor_urls,score,notes,response
-2026-06-30,ChatGPT,P001,Nursing,"What is the best nursing program near Raleigh North Carolina?",Yes,2,"Durham Tech|UNC","https://www.waketech.edu/programs-courses/credit/nursing","",82,"Program page cited.","Wake Tech was recommended as one of the stronger nursing options near Raleigh, though Durham Tech was mentioned first."
-2026-06-30,Gemini,P001,Nursing,"What is the best nursing program near Raleigh North Carolina?",Yes,1,"UNC","https://www.waketech.edu/programs-courses/credit/nursing","",95,"Excellent visibility.","Gemini recommended Wake Tech first and referenced its nursing program as a strong local option."
-2026-06-30,Perplexity,P001,Nursing,"What is the best nursing program near Raleigh North Carolina?",No,0,"Durham Tech|UNC","","",12,"Not mentioned.","Perplexity highlighted Durham Tech and UNC-related nursing pathways but did not mention Wake Tech."
+2026-06-30,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,Durham Tech|UNC,https://www.waketech.edu/programs-courses/credit/nursing,,82,Program page cited.,"Wake Tech was recommended as one of the stronger nursing options near Raleigh, though Durham Tech was mentioned first."
+2026-06-30,Gemini,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC,https://www.waketech.edu/programs-courses/credit/nursing,,95,Excellent visibility.,Gemini recommended Wake Tech first and referenced its nursing program as a strong local option.
+2026-06-30,Perplexity,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,No,0,Durham Tech|UNC,,,12,Not mentioned.,Perplexity highlighted Durham Tech and UNC-related nursing pathways but did not mention Wake Tech.
+2026-07-01,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,Durham Tech|UNC,https://www.waketech.edu/programs-courses/credit/nursing,https://www.durhamtech.edu/programs-pathways/nursing|https://nursing.unc.edu/,65,"Wake Tech was mentioned, but visibility appears weak.","If you're looking for one of the strongest community college nursing programs near Raleigh, several schools stand out.
+
+Wake Tech offers a well-established Associate Degree Nursing (ADN) program with modern simulation labs, strong clinical partnerships, and pathways to continue toward a BSN. Students benefit from flexible scheduling and a large selection of healthcare-related programs.
+
+Durham Tech is also recognized for its nursing program and has a strong reputation for preparing graduates for licensure.
+
+UNC School of Nursing is an excellent option for students pursuing a bachelor's degree directly, although admission is significantly more competitive.
+
+Prospective students should compare admission requirements, clinical opportunities, graduation outcomes, NCLEX pass rates, tuition costs, and transfer agreements before choosing a program.
+
+More information:
+https://www.waketech.edu/programs-courses/credit/nursing
+https://www.durhamtech.edu/programs-pathways/nursing
+https://nursing.unc.edu/"
+2026-07-01,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC,,,45,"Wake Tech was mentioned, but visibility appears weak.","If your goal is to become an RN and you're in the Raleigh area, I'd rank the programs like this:
+
+1. UNC School of Nursing (Chapel Hill) ⭐ Best Overall
+4.4
+•
+Nursing school
+Website
+•
+Directions
+•
+(919) 966-4260
+Consistently one of the top nursing schools in the country.
+Excellent NCLEX pass rates (96% first-time pass rate for 2025 graduates).
+Outstanding reputation with employers.
+BSN, ABSN, MSN, DNP, and PhD programs available.
+
+Best for: Students who want the strongest academic reputation and can get into a competitive program.
+
+2. Duke University School of Nursing (Durham)
+4.4
+•
+Nursing school
+•
+Closed
+Website
+•
+Directions
+•
+(919) 684-4248
+Nationally elite nursing school.
+Incredible clinical experiences through the Duke Health system.
+Exceptional graduate and advanced practice programs.
+Expensive, but highly respected.
+
+Best for: Students seeking a prestigious private university and who are comfortable with the higher tuition.
+
+3. Wake Tech Perry Health Sciences Campus (Raleigh)
+3.8
+•
+College
+•
+Closed
+Website
+•
+Directions
+•
+(919) 747-0400
+One of the best values in North Carolina.
+Associate Degree Nursing (ADN) program with strong employer connections.
+Many graduates bridge later to a BSN while working.
+Excellent option if cost matters.
+
+Best for: Someone wanting the most affordable path to becoming an RN.
+
+4. NCCU Nursing (Durham)
+3.7
+•
+Nursing school
+•
+Closed
+Website
+•
+Directions
+•
+(919) 530-7235
+Strong BSN program.
+Outstanding recent NCLEX results—96% first-time pass rate in 2025, including a 100% pass rate for one accelerated BSN cohort.
+
+Best for: Students looking for an excellent public university option with strong recent outcomes.
+
+5. CCCC Chatham Health Sciences Center (Pittsboro)
+4.6
+•
+Community college
+•
+Closed
+Website
+•
+Directions
+•
+(919) 545-8656
+Excellent community college nursing program.
+Convenient if you live in Chatham County or the southwest Raleigh area.
+Lower tuition than four-year universities.
+My recommendation based on your goals
+Highest prestige: UNC or Duke.
+Best value: Wake Tech.
+Best return on investment: Wake Tech ADN → employer pays for RN-to-BSN later. This is a very common path and can save tens of thousands of dollars while getting you into the workforce sooner.
+
+Since I know you're in the Raleigh area, I'd seriously look at Wake Tech if minimizing debt is important, or UNC if you're aiming for the strongest traditional BSN program.
+
+One question that will change my recommendation: Are you looking to become an RN as a first career, or do you already have a bachelor's degree and are considering an accelerated BSN (ABSN)?"
