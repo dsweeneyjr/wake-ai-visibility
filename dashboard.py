@@ -1,10 +1,6 @@
 import time
-
-import sys
+from datetime import datetime
 from pathlib import Path
-
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
 
 import pandas as pd
 import streamlit as st
@@ -21,25 +17,47 @@ st.set_page_config(
     layout="wide"
 )
 
-df = pd.read_csv("data/results.csv")
+RESULTS_FILE = Path("data/results.csv")
+df = pd.read_csv(RESULTS_FILE)
+
+df["run_date"] = pd.to_datetime(df["run_date"], errors="coerce")
 
 st.title("Wake Tech AI Search Intelligence")
 st.caption("Decision-support prototype for tracking how AI tools recommend Wake Tech.")
 
+with st.sidebar:
+    st.header("Filters")
+
+    selected_platforms = st.multiselect(
+        "AI Platforms",
+        sorted(df["platform"].dropna().unique()),
+        default=sorted(df["platform"].dropna().unique())
+    )
+
+    selected_categories = st.multiselect(
+        "Categories",
+        sorted(df["category"].dropna().unique()),
+        default=sorted(df["category"].dropna().unique())
+    )
+
+filtered = df[
+    df["platform"].isin(selected_platforms) &
+    df["category"].isin(selected_categories)
+]
+
+latest_date = filtered["run_date"].max() if not filtered.empty else None
+latest_scan = filtered[filtered["run_date"] == latest_date] if latest_date is not None else pd.DataFrame()
+
 with st.container(border=True):
-
     st.markdown("### Executive Summary")
-
-    st.write("""
-This prototype measures how AI search engines recommend Wake Tech,
-tracks competitors, identifies content opportunities, and provides
-actionable recommendations for improving AI visibility.
-""")
+    st.write(
+        "This prototype measures how AI search engines recommend Wake Tech, "
+        "tracks competitors, identifies content opportunities, and provides "
+        "actionable recommendations for improving AI visibility."
+    )
 
     if st.button("▶ Run AI Scan", type="primary"):
-
         progress = st.progress(0)
-
         status = st.empty()
 
         status.write("🤖 Connecting to ChatGPT...")
@@ -63,66 +81,23 @@ actionable recommendations for improving AI visibility.
         progress.progress(100)
 
         status.empty()
+        st.success("Demo AI scan complete.")
 
-        st.success("AI Scan Complete")
-
-        st.info("""
-3 AI platforms scanned
-
-1 prompt analyzed
-
-Wake Tech mentioned on 2 of 3 platforms
-
-1 new recommendation generated
-
-Dashboard refreshed
-""")
-        
 with st.container(border=True):
-
     st.subheader("Latest Scan")
 
-    col1,col2,col3,col4 = st.columns(4)
+    col1, col2, col3, col4 = st.columns(4)
 
-    col1.metric(
-        "Scan Time",
-        "07:42 AM"
-    )
-
-    col2.metric(
-        "Platforms",
-        "3"
-    )
-
-    col3.metric(
-        "Responses",
-        "3"
-    )
-
-    col4.metric(
-        "Duration",
-        "18 sec"
-    )
-
-with st.sidebar:
-    st.header("Filters")
-
-    selected_platforms = st.multiselect(
-        "AI Platforms",
-        sorted(df["platform"].unique()),
-        default=sorted(df["platform"].unique())
-    )
-
-    selected_categories = st.multiselect(
-        "Categories",
-        sorted(df["category"].unique()),
-        default=sorted(df["category"].unique())
-    )
-
-filtered = df[
-    df["platform"].isin(selected_platforms) &
-    df["category"].isin(selected_categories)
-]
+    if latest_scan.empty:
+        col1.metric("Latest Date", "N/A")
+        col2.metric("Platforms", 0)
+        col3.metric("Responses", 0)
+        col4.metric("Avg Score", 0)
+    else:
+        col1.metric("Latest Date", latest_date.strftime("%b %d, %Y"))
+        col2.metric("Platforms", latest_scan["platform"].nunique())
+        col3.metric("Responses", len(latest_scan))
+        col4.metric("Avg Score", round(latest_scan["score"].mean(), 1))
 
 show_executive_summary(filtered)
 
