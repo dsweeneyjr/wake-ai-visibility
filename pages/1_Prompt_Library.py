@@ -10,6 +10,7 @@ st.set_page_config(
 )
 
 st.title("Prompt Library")
+st.success("NEW VERSION LOADED")
 st.caption("Questions we want the AI tools to monitor over time.")
 
 prompts = pd.read_csv(PROMPTS_FILE)
@@ -21,9 +22,26 @@ st.divider()
 
 st.subheader("Add New Prompt")
 
+existing_categories = sorted(prompts["category"].dropna().unique().tolist())
+category_options = existing_categories + ["Add new category..."]
+
 with st.form("add_prompt_form"):
-    category = st.text_input("Category", placeholder="Example: Cybersecurity")
+    category_choice = st.selectbox(
+        "Category",
+        category_options,
+        index=0 if existing_categories else len(category_options) - 1
+    )
+
+    if category_choice == "Add new category...":
+        category = st.text_input(
+            "New Category",
+            placeholder="Example: Cybersecurity"
+        )
+    else:
+        category = category_choice
+
     priority = st.selectbox("Priority", ["High", "Medium", "Low"])
+
     prompt = st.text_area(
         "Prompt",
         placeholder="Example: Which community college has the best cybersecurity program in North Carolina?"
