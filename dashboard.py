@@ -40,13 +40,28 @@ with st.sidebar:
         default=sorted(df["category"].dropna().unique())
     )
 
-filtered = df[
+filtered_all = df[
     df["platform"].isin(selected_platforms) &
     df["category"].isin(selected_categories)
 ]
 
-latest_date = filtered["run_date"].max() if not filtered.empty else None
-latest_scan = filtered[filtered["run_date"] == latest_date] if latest_date is not None else pd.DataFrame()
+with st.sidebar:
+    show_history = st.checkbox("Show all historical runs", value=False)
+
+if show_history:
+    filtered = filtered_all
+else:
+    filtered = (
+        filtered_all
+        .sort_values("run_date")
+        .drop_duplicates(
+            subset=["platform", "prompt_id"],
+            keep="last"
+        )
+    )
+
+latest_date = filtered_all["run_date"].max() if not filtered_all.empty else None
+latest_scan = filtered_all[filtered_all["run_date"] == latest_date] if latest_date is not None else pd.DataFrame()
 
 with st.container(border=True):
     st.markdown("### Executive Summary")
@@ -117,5 +132,5 @@ st.divider()
 show_insights(filtered)
 
 st.divider()
-st.subheader("Raw Data")
+st.subheader("Results Data")
 st.dataframe(filtered, width="stretch")
