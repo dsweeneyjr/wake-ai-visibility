@@ -1,6 +1,7 @@
 import time
 from datetime import datetime
 from pathlib import Path
+from services.scan import run_demo_scan
 
 import pandas as pd
 import streamlit as st
@@ -96,7 +97,11 @@ with st.container(border=True):
         progress.progress(100)
 
         status.empty()
-        st.success("Demo AI scan complete.")
+        scan = run_demo_scan()
+
+        st.success("AI Scan Complete")
+
+        st.rerun()
 
 with st.container(border=True):
     st.subheader("Latest Scan")
