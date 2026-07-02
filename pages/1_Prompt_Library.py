@@ -10,7 +10,6 @@ st.set_page_config(
 )
 
 st.title("Prompt Library")
-st.success("NEW VERSION LOADED")
 st.caption("Questions we want the AI tools to monitor over time.")
 
 prompts = pd.read_csv(PROMPTS_FILE)
