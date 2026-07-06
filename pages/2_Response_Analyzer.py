@@ -46,7 +46,11 @@ response = st.text_area("AI Response", height=300)
 def analyze_response(response_text):
     text = response_text.lower()
 
-    wake_mentioned = "wake tech" in text or "wake technical" in text
+    wake_terms = [
+        "wake tech",
+        "wake technical",
+        "wake technical community college"
+    ]
 
     known_competitors = [
         "Durham Tech",
@@ -62,37 +66,106 @@ def analyze_response(response_text):
         "Pitt Community College"
     ]
 
+    school_mentions = []
+
+    for term in wake_terms:
+        match = re.search(re.escape(term), text)
+        if match:
+            school_mentions.append({
+                "name": "Wake Tech",
+                "start": match.start()
+            })
+            break
+
     competitors = []
 
     for competitor in known_competitors:
-        if competitor.lower() in text:
+        match = re.search(re.escape(competitor.lower()), text)
+        if match:
             competitors.append(competitor)
+            school_mentions.append({
+                "name": competitor,
+                "start": match.start()
+            })
+
+    school_mentions = sorted(school_mentions, key=lambda x: x["start"])
+
+    wake_mentioned = any(item["name"] == "Wake Tech" for item in school_mentions)
+
+    if wake_mentioned:
+        position = next(
+            index + 1
+            for index, item in enumerate(school_mentions)
+            if item["name"] == "Wake Tech"
+        )
+    else:
+        position = 0
 
     urls = re.findall(r"https?://\S+", response_text)
 
     wake_urls = [url for url in urls if "waketech.edu" in url.lower()]
     competitor_urls = [url for url in urls if "waketech.edu" not in url.lower()]
 
+    wake_mentions_count = sum(text.count(term) for term in wake_terms)
+
+    positive_terms = [
+        "recommended",
+        "strong",
+        "best",
+        "top",
+        "good option",
+        "excellent",
+        "well-regarded",
+        "affordable",
+        "comprehensive"
+    ]
+
+    positive_context = any(term in text for term in positive_terms)
+
     score = 0
 
     if wake_mentioned:
-        score += 50
+        score += 30
+
+        if position == 1:
+            score += 20
+        elif position == 2:
+            score += 10
+        elif position == 3:
+            score += 5
+
+        score += min(wake_mentions_count * 5, 15)
 
     if wake_urls:
-        score += 25
+        score += 20
 
-    if competitors:
+    if positive_context and wake_mentioned:
+        score += 15
+
+    competitors_before_wake = 0
+
+    if wake_mentioned:
+        wake_start = next(
+            item["start"]
+            for item in school_mentions
+            if item["name"] == "Wake Tech"
+        )
+
+        competitors_before_wake = len([
+            item for item in school_mentions
+            if item["name"] != "Wake Tech" and item["start"] < wake_start
+        ])
+
+        score -= competitors_before_wake * 10
+    else:
         score -= min(len(competitors) * 5, 20)
 
     score = max(0, min(score, 100))
 
-    if wake_mentioned:
-        position = 1
-    else:
-        position = 0
-
     if not wake_mentioned:
         notes = "Wake Tech was not mentioned."
+    elif position > 3:
+        notes = "Wake Tech was mentioned, but appeared behind several competitors."
     elif score < 70:
         notes = "Wake Tech was mentioned, but visibility appears weak."
     else:
@@ -118,14 +191,39 @@ if st.button("Analyze Response"):
         st.divider()
         st.subheader("Analysis")
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
 
-        col1.metric("Wake Tech Mentioned", analysis["wake_tech_mentioned"])
-        col2.metric("Visibility Score", analysis["score"])
-        col3.metric("URLs Found", len(analysis["wake_tech_url"].split("|")) if analysis["wake_tech_url"] else 0)
+        col1.metric(
+            "Wake Tech Mentioned",
+           analysis["wake_tech_mentioned"]
+        )
+
+        col2.metric(
+            "Detected Position",
+            analysis["position"] if analysis["position"] > 0 else "N/A"
+        )
+
+        col3.metric(
+            "Visibility Score",
+            analysis["score"]
+        )
+
+        col4.metric(
+            "Wake Tech URLs",
+            len(analysis["wake_tech_url"].split("|"))
+            if analysis["wake_tech_url"]
+            else 0
+        )
 
         st.write("**Competitors Mentioned:**")
-        st.write(analysis["competitors"] if analysis["competitors"] else "None detected")
+
+        competitor_display = (
+            analysis["competitors"].replace("|", " • ")
+            if analysis["competitors"]
+            else "None detected"
+        )
+
+        st.write(competitor_display)
 
         st.write("**Recommendation:**")
         if analysis["wake_tech_mentioned"] == "No":
@@ -135,8 +233,14 @@ if st.button("Analyze Response"):
         else:
             st.success("Wake Tech has strong visibility in this response.")
 
+        st.write("**Analysis Notes:**")
+        st.write(analysis["notes"])
+
         st.session_state["latest_analysis"] = analysis
         st.session_state["latest_response"] = response
+
+        with st.expander("View analyzed response"):
+            st.write(st.session_state["latest_response"])
 
 
 if "latest_analysis" in st.session_state:
@@ -145,9 +249,11 @@ if "latest_analysis" in st.session_state:
 
     if st.button("Save to Results"):
         analysis = st.session_state["latest_analysis"]
+        now = datetime.now()
 
         new_row = {
-            "run_date": datetime.now().strftime("%Y-%m-%d"),
+            "run_date": now.strftime("%Y-%m-%d %H:%M:%S"),
+            "scan_id": f"manual_{now.strftime('%Y%m%d_%H%M%S')}",
             "platform": platform,
             "prompt_id": selected_prompt["prompt_id"],
             "category": selected_prompt["category"],

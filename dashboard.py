@@ -21,6 +21,16 @@ RESULTS_FILE = Path("data/results.csv")
 df = pd.read_csv(RESULTS_FILE)
 
 df["run_date"] = pd.to_datetime(df["run_date"], errors="coerce")
+df["scan_sort_date"] = df["run_date"]
+
+df.loc[
+    df["scan_sort_date"].isna() & df["scan_id"].notna(),
+    "scan_sort_date"
+] = pd.to_datetime(
+    df["scan_id"].astype(str).str[:14],
+    format="%Y%m%d%H%M%S",
+    errors="coerce"
+)
 if "scan_id" not in df.columns:
     df["scan_id"] = df["run_date"].astype(str)
 
@@ -65,20 +75,27 @@ else:
         )
     )
 
+valid_filtered_all = filtered_all[
+    filtered_all["scan_sort_date"].notna()
+].copy()
+
 latest_scan_id = (
-    filtered_all.sort_values(["run_date", "scan_id"])["scan_id"].iloc[-1]
-    if not filtered_all.empty
+    valid_filtered_all
+    .sort_values(["scan_sort_date", "scan_id"])
+    ["scan_id"]
+    .iloc[-1]
+    if not valid_filtered_all.empty
     else None
 )
 
 latest_scan = (
-    filtered_all[filtered_all["scan_id"] == latest_scan_id]
+    valid_filtered_all[valid_filtered_all["scan_id"] == latest_scan_id]
     if latest_scan_id is not None
     else pd.DataFrame()
 )
 
 latest_date = (
-    latest_scan["run_date"].max()
+    latest_scan["scan_sort_date"].max()
     if not latest_scan.empty
     else None
 )
@@ -94,6 +111,11 @@ with st.container(border=True):
     st.info(
         "Run a demo visibility scan to add a new set of simulated AI platform responses."
     )
+    if latest_date is not None and pd.notna(latest_date):
+        st.caption(f"Last scan: {latest_date.strftime('%b %d, %Y at %I:%M %p')}")
+    else:
+        st.caption("Last scan: Not available yet")
+        
     if st.button("▶ Run AI Visibility Scan", type="primary"):
         progress = st.progress(0)
         status = st.empty()
@@ -131,24 +153,39 @@ with st.container(border=True):
 
     col1, col2, col3, col4 = st.columns(4)
 
-    if latest_scan.empty:
+    if latest_scan.empty or pd.isna(latest_date):
         col1.metric("Latest Date", "N/A")
         col2.metric("Platforms", 0)
         col3.metric("Responses", 0)
         col4.metric("Avg Score", 0)
     else:
-        col1.metric("Latest Date", latest_date.strftime("%b %d, %Y"))
-        col2.metric("Platforms", latest_scan["platform"].nunique())
-        col3.metric("Responses", len(latest_scan))
-        col4.metric("Avg Score", round(latest_scan["score"].mean(), 1))
+        col1.metric(
+            "Latest Date",
+            latest_date.strftime("%b %d, %Y")
+        )
+
+        col2.metric(
+            "Platforms",
+            latest_scan["platform"].nunique()
+        )
+
+        col3.metric(
+            "Responses",
+            len(latest_scan)
+       )
+
+        col4.metric(
+            "Avg Score",
+            round(latest_scan["score"].mean(), 1)
+        )
 
 show_executive_summary(filtered)
 
 st.divider()
-show_metrics(filtered)
+show_metrics(filtered, filtered_all)
 
 st.divider()
-show_charts(filtered)
+show_charts(filtered, filtered_all)
 
 st.divider()
 show_prompt_explorer(filtered)

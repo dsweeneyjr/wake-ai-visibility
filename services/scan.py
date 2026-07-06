@@ -52,7 +52,7 @@ def run_demo_scan():
 
     now = datetime.now()
     scan_id = now.strftime("%Y%m%d%H%M%S%f")
-    today = now.strftime("%Y-%m-%d")
+    run_timestamp = now.strftime("%Y-%m-%d %H:%M:%S")
 
     new_rows = []
 
@@ -63,7 +63,7 @@ def run_demo_scan():
 
             new_rows.append({
                 "scan_id": scan_id,
-                "run_date": today,
+                "run_date": run_timestamp,
                 "platform": platform,
                 "prompt_id": prompt_row["prompt_id"],
                 "category": prompt_row["category"],
@@ -84,7 +84,7 @@ def run_demo_scan():
 
     return {
         "scan_id": scan_id,
-        "scan_date": today,
+        "scan_date": run_timestamp,
         "platforms": new_results["platform"].nunique(),
         "responses": len(new_results),
         "avg_score": round(new_results["score"].mean(), 1),
