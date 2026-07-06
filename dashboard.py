@@ -75,32 +75,32 @@ with st.container(border=True):
     st.warning(
         "Prototype note: live AI scanning is not enabled yet. Current scan button simulates the workflow."
     )
-if st.button("▶ Run Demo Scan", type="primary"):
-    progress = st.progress(0)
-    status = st.empty()
+    if st.button("▶ Run Demo Scan", type="primary"):
+        progress = st.progress(0)
+        status = st.empty()
 
-    status.write("🤖 Simulating ChatGPT scan...")
-    time.sleep(.8)
-    progress.progress(25)
+        status.write("🤖 Simulating ChatGPT scan...")
+        time.sleep(.8)
+        progress.progress(25)
 
-    status.write("🧠 Simulating Gemini scan...")
-    time.sleep(.8)
-    progress.progress(50)
+        status.write("🧠 Simulating Gemini scan...")
+        time.sleep(.8)
+        progress.progress(50)
 
-    status.write("🔍 Simulating Perplexity scan...")
-    time.sleep(.8)
-    progress.progress(75)
+        status.write("🔍 Simulating Perplexity scan...")
+        time.sleep(.8)
+        progress.progress(75)
 
-    status.write("📊 Updating dashboard preview...")
-    time.sleep(.8)
-    progress.progress(100)
+        status.write("📊 Updating dashboard preview...")
+        time.sleep(.8)
+        progress.progress(100)
 
-    status.empty()
+        status.empty()
 
-    st.success("Demo scan complete.")
-    st.info(
-        "This is still simulated. Real AI scans will run once API billing/quota is available."
-    )
+        st.success("Demo scan complete.")
+        st.info(
+            "This is still simulated. Real AI scans will run once API billing/quota is available."
+        )
 
 with st.container(border=True):
     st.subheader("Latest Scan")
