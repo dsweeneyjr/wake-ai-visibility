@@ -53,7 +53,7 @@ if priority_filter != "All":
         filtered_prompts["priority"] == priority_filter
     ]
 
-st.dataframe(filtered_prompts, width="stretch")
+st.dataframe(filtered_prompts, use_container_width=True)
 
 st.divider()
 
@@ -62,20 +62,20 @@ st.subheader("Add New Prompt")
 existing_categories = sorted(prompts["category"].dropna().unique().tolist())
 category_options = existing_categories + ["Add new category..."]
 
-with st.form("add_prompt_form"):
+with st.form("add_prompt_form", clear_on_submit=True):
     category_choice = st.selectbox(
         "Category",
         category_options,
         index=0 if existing_categories else len(category_options) - 1
     )
 
+    new_category = ""
+
     if category_choice == "Add new category...":
-        category = st.text_input(
+        new_category = st.text_input(
             "New Category",
             placeholder="Example: Cybersecurity"
         )
-    else:
-        category = category_choice
 
     priority = st.selectbox("Priority", ["High", "Medium", "Low"])
 
@@ -86,21 +86,27 @@ with st.form("add_prompt_form"):
 
     submitted = st.form_submit_button("Add Prompt")
 
-    if submitted:
-        if not category.strip() or not prompt.strip():
-            st.error("Category and prompt are required.")
-        else:
-            new_id = f"P{len(prompts) + 1:03d}"
+if submitted:
+    category = new_category if category_choice == "Add new category..." else category_choice
 
-            new_row = pd.DataFrame([{
-                "prompt_id": new_id,
-                "category": category.strip(),
-                "priority": priority,
-                "prompt": prompt.strip()
-            }])
+    if not category.strip() or not prompt.strip():
+        st.error("Category and prompt are required.")
+    else:
+        existing_ids = prompts["prompt_id"].astype(str).str.replace("P", "", regex=False)
+        existing_ids = pd.to_numeric(existing_ids, errors="coerce").dropna()
 
-            updated = pd.concat([prompts, new_row], ignore_index=True)
-            updated.to_csv(PROMPTS_FILE, index=False)
+        next_id_number = int(existing_ids.max()) + 1 if not existing_ids.empty else 1
+        new_id = f"P{next_id_number:03d}"
 
-            st.success(f"Added prompt {new_id}.")
-            st.rerun()
+        new_row = pd.DataFrame([{
+            "prompt_id": new_id,
+            "category": category.strip(),
+            "priority": priority,
+            "prompt": prompt.strip()
+        }])
+
+        updated = pd.concat([prompts, new_row], ignore_index=True)
+        updated.to_csv(PROMPTS_FILE, index=False)
+
+        st.success(f"Added prompt {new_id}.")
+        st.rerun()
