@@ -14,8 +14,46 @@ st.caption("Questions we want the AI tools to monitor over time.")
 
 prompts = pd.read_csv(PROMPTS_FILE)
 
+st.metric("Total Prompts", len(prompts))
+
 st.subheader("Current Prompts")
-st.dataframe(prompts, width="stretch")
+
+col1, col2, col3 = st.columns([2, 1, 1])
+
+with col1:
+    search = st.text_input("Search prompts", placeholder="Search by keyword...")
+
+with col2:
+    category_filter = st.selectbox(
+        "Category",
+        ["All"] + sorted(prompts["category"].dropna().unique().tolist())
+    )
+
+with col3:
+    priority_filter = st.selectbox(
+        "Priority",
+        ["All"] + sorted(prompts["priority"].dropna().unique().tolist())
+    )
+
+filtered_prompts = prompts.copy()
+
+if search:
+    filtered_prompts = filtered_prompts[
+        filtered_prompts["prompt"].str.contains(search, case=False, na=False) |
+        filtered_prompts["category"].str.contains(search, case=False, na=False)
+    ]
+
+if category_filter != "All":
+    filtered_prompts = filtered_prompts[
+        filtered_prompts["category"] == category_filter
+    ]
+
+if priority_filter != "All":
+    filtered_prompts = filtered_prompts[
+        filtered_prompts["priority"] == priority_filter
+    ]
+
+st.dataframe(filtered_prompts, width="stretch")
 
 st.divider()
 
