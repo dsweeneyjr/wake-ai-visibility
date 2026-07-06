@@ -97,10 +97,14 @@ with st.container(border=True):
 
         status.empty()
 
+        scan = run_demo_scan()
+
         st.success("Demo scan complete.")
         st.info(
-            "This is still simulated. Real AI scans will run once API billing/quota is available."
+            f"Added {scan['responses']} demo results across {scan['platforms']} platforms. "
+            f"Average score: {scan['avg_score']}."
         )
+
 
 with st.container(border=True):
     st.subheader("Latest Scan")
