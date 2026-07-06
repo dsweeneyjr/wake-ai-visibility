@@ -22,9 +22,14 @@ RESULTS_FILE = Path("data/results.csv")
 df = pd.read_csv(RESULTS_FILE)
 
 df["run_date"] = pd.to_datetime(df["run_date"], errors="coerce")
+if "scan_id" not in df.columns:
+    df["scan_id"] = df["run_date"].astype(str)
 
 st.title("Wake Tech AI Search Intelligence")
 st.caption("Decision-support prototype for tracking how AI tools recommend Wake Tech.")
+if "scan_message" in st.session_state:
+    st.success(st.session_state["scan_message"])
+    del st.session_state["scan_message"]
 
 with st.sidebar:
     st.header("Filters")
@@ -61,8 +66,23 @@ else:
         )
     )
 
-latest_date = filtered_all["run_date"].max() if not filtered_all.empty else None
-latest_scan = filtered_all[filtered_all["run_date"] == latest_date] if latest_date is not None else pd.DataFrame()
+latest_scan_id = (
+    filtered_all.sort_values(["run_date", "scan_id"])["scan_id"].iloc[-1]
+    if not filtered_all.empty
+    else None
+)
+
+latest_scan = (
+    filtered_all[filtered_all["scan_id"] == latest_scan_id]
+    if latest_scan_id is not None
+    else pd.DataFrame()
+)
+
+latest_date = (
+    latest_scan["run_date"].max()
+    if not latest_scan.empty
+    else None
+)
 
 with st.container(border=True):
     st.markdown("### Executive Summary")
@@ -99,11 +119,12 @@ with st.container(border=True):
 
         scan = run_demo_scan()
 
-        st.success("Demo scan complete.")
-        st.info(
-            f"Added {scan['responses']} demo results across {scan['platforms']} platforms. "
-            f"Average score: {scan['avg_score']}."
+        st.session_state["scan_message"] = (
+            f"Demo scan complete. Added {scan['responses']} demo results across "
+            f"{scan['platforms']} platforms. Average score: {scan['avg_score']}."
         )
+
+        st.rerun()
 
 
 with st.container(border=True):

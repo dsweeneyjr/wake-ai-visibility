@@ -10,10 +10,15 @@ RESULTS_FILE = Path("data/results.csv")
 def run_demo_scan():
     df = pd.read_csv(RESULTS_FILE)
 
-    today = datetime.now().strftime("%Y-%m-%d")
+    now = datetime.now()
+    scan_id = now.strftime("%Y%m%d%H%M%S%f")
+    today = now.strftime("%Y-%m-%d")
+
+    if "scan_id" not in df.columns:
+        df["scan_id"] = df["run_date"].astype(str)
 
     latest_rows = (
-        df.sort_values("run_date")
+        df.sort_values(["run_date", "scan_id"])
         .drop_duplicates(
             subset=["platform", "prompt_id"],
             keep="last"
@@ -21,6 +26,7 @@ def run_demo_scan():
         .copy()
     )
 
+    latest_rows["scan_id"] = scan_id
     latest_rows["run_date"] = today
     latest_rows["score"] = latest_rows["score"].apply(
         lambda x: min(100, max(0, int(x) + 3))
@@ -30,6 +36,7 @@ def run_demo_scan():
     updated.to_csv(RESULTS_FILE, index=False)
 
     return {
+        "scan_id": scan_id,
         "scan_date": today,
         "platforms": latest_rows["platform"].nunique(),
         "responses": len(latest_rows),
