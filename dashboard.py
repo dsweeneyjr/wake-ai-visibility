@@ -72,36 +72,35 @@ with st.container(border=True):
         "actionable recommendations for improving AI visibility."
     )
 
-    if st.button("▶ Run AI Scan", type="primary"):
-        progress = st.progress(0)
-        status = st.empty()
+    st.warning(
+        "Prototype note: live AI scanning is not enabled yet. Current scan button simulates the workflow."
+    )
+    if st.button("▶ Run Demo Scan", type="primary"):
+    progress = st.progress(0)
+    status = st.empty()
 
-        status.write("🤖 Connecting to ChatGPT...")
-        time.sleep(.8)
-        progress.progress(20)
+    status.write("🤖 Simulating ChatGPT scan...")
+    time.sleep(.8)
+    progress.progress(25)
 
-        status.write("✨ Collecting ChatGPT response...")
-        time.sleep(.8)
-        progress.progress(40)
+    status.write("🧠 Simulating Gemini scan...")
+    time.sleep(.8)
+    progress.progress(50)
 
-        status.write("🧠 Querying Gemini...")
-        time.sleep(.8)
-        progress.progress(60)
+    status.write("🔍 Simulating Perplexity scan...")
+    time.sleep(.8)
+    progress.progress(75)
 
-        status.write("🔍 Querying Perplexity...")
-        time.sleep(.8)
-        progress.progress(80)
+    status.write("📊 Updating dashboard preview...")
+    time.sleep(.8)
+    progress.progress(100)
 
-        status.write("📊 Analyzing responses...")
-        time.sleep(1)
-        progress.progress(100)
+    status.empty()
 
-        status.empty()
-        scan = run_demo_scan()
-
-        st.success("AI Scan Complete")
-
-        st.rerun()
+    st.success("Demo scan complete.")
+    st.info(
+        "This is still simulated. Real AI scans will run once API billing/quota is available."
+    )
 
 with st.container(border=True):
     st.subheader("Latest Scan")
