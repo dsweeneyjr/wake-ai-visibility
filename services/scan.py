@@ -5,40 +5,87 @@ import pandas as pd
 
 
 RESULTS_FILE = Path("data/results.csv")
+PROMPTS_FILE = Path("prompts/prompts.csv")
+
+PLATFORMS = ["ChatGPT", "Gemini", "Perplexity"]
+
+
+def demo_score(platform, category):
+    base_scores = {
+        "ChatGPT": 68,
+        "Gemini": 74,
+        "Perplexity": 48,
+    }
+
+    category_adjustments = {
+        "Nursing": 12,
+        "Admissions": 8,
+        "Cybersecurity": -6,
+        "Transfer": 4,
+        "Financial Aid": -3,
+    }
+
+    return max(
+        0,
+        min(
+            100,
+            base_scores.get(platform, 60) + category_adjustments.get(category, 0)
+        )
+    )
+
+
+def demo_competitors(category):
+    competitors = {
+        "Nursing": "UNC|Durham Tech",
+        "Admissions": "Durham Tech",
+        "Cybersecurity": "NC State|Durham Tech",
+        "Transfer": "NC State|UNC",
+        "Financial Aid": "Central Piedmont|Durham Tech",
+    }
+
+    return competitors.get(category, "Durham Tech")
 
 
 def run_demo_scan():
-    df = pd.read_csv(RESULTS_FILE)
+    prompts = pd.read_csv(PROMPTS_FILE)
+    existing_results = pd.read_csv(RESULTS_FILE)
 
     now = datetime.now()
     scan_id = now.strftime("%Y%m%d%H%M%S%f")
     today = now.strftime("%Y-%m-%d")
 
-    if "scan_id" not in df.columns:
-        df["scan_id"] = df["run_date"].astype(str)
+    new_rows = []
 
-    latest_rows = (
-        df.sort_values(["run_date", "scan_id"])
-        .drop_duplicates(
-            subset=["platform", "prompt_id"],
-            keep="last"
-        )
-        .copy()
-    )
+    for _, prompt_row in prompts.iterrows():
+        for platform in PLATFORMS:
+            score = demo_score(platform, prompt_row["category"])
+            mentioned = "Yes" if score >= 55 else "No"
 
-    latest_rows["scan_id"] = scan_id
-    latest_rows["run_date"] = today
-    latest_rows["score"] = latest_rows["score"].apply(
-        lambda x: min(100, max(0, int(x) + 3))
-    )
+            new_rows.append({
+                "scan_id": scan_id,
+                "run_date": today,
+                "platform": platform,
+                "prompt_id": prompt_row["prompt_id"],
+                "category": prompt_row["category"],
+                "prompt": prompt_row["prompt"],
+                "wake_tech_mentioned": mentioned,
+                "position": 1 if score >= 70 else 2 if score >= 55 else 0,
+                "competitors": demo_competitors(prompt_row["category"]),
+                "wake_tech_url": "https://www.waketech.edu" if mentioned == "Yes" else "",
+                "competitor_urls": "",
+                "score": score,
+                "notes": "Demo result generated from Prompt Library.",
+            })
 
-    updated = pd.concat([df, latest_rows], ignore_index=True)
+    new_results = pd.DataFrame(new_rows)
+
+    updated = pd.concat([existing_results, new_results], ignore_index=True)
     updated.to_csv(RESULTS_FILE, index=False)
 
     return {
         "scan_id": scan_id,
         "scan_date": today,
-        "platforms": latest_rows["platform"].nunique(),
-        "responses": len(latest_rows),
-        "avg_score": round(latest_rows["score"].mean(), 1),
+        "platforms": new_results["platform"].nunique(),
+        "responses": len(new_results),
+        "avg_score": round(new_results["score"].mean(), 1),
     }
