@@ -75,7 +75,7 @@ with st.container(border=True):
     st.warning(
         "Prototype note: live AI scanning is not enabled yet. Current scan button simulates the workflow."
     )
-    if st.button("▶ Run Demo Scan", type="primary"):
+if st.button("▶ Run Demo Scan", type="primary"):
     progress = st.progress(0)
     status = st.empty()
 
