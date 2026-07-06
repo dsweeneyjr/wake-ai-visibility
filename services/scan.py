@@ -1,5 +1,7 @@
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
+import random
 
 import pandas as pd
 
@@ -25,13 +27,15 @@ def demo_score(platform, category):
         "Financial Aid": -3,
     }
 
-    return max(
-        0,
-        min(
-            100,
-            base_scores.get(platform, 60) + category_adjustments.get(category, 0)
-        )
+    variation = random.randint(-5, 5)
+
+    score = (
+        base_scores.get(platform, 60)
+        + category_adjustments.get(category, 0)
+        + variation
     )
+
+    return max(0, min(100, score))
 
 
 def demo_competitors(category):
@@ -50,7 +54,7 @@ def run_demo_scan():
     prompts = pd.read_csv(PROMPTS_FILE)
     existing_results = pd.read_csv(RESULTS_FILE)
 
-    now = datetime.now()
+    now = datetime.now(ZoneInfo("America/New_York"))
     scan_id = now.strftime("%Y%m%d%H%M%S%f")
     run_timestamp = now.strftime("%Y-%m-%d %H:%M:%S")
 
@@ -58,7 +62,11 @@ def run_demo_scan():
 
     for _, prompt_row in prompts.iterrows():
         for platform in PLATFORMS:
-            score = demo_score(platform, prompt_row["category"])
+            score = demo_score(
+                platform,
+                prompt_row["category"]
+            )
+
             mentioned = "Yes" if score >= 55 else "No"
 
             new_rows.append({
@@ -69,9 +77,19 @@ def run_demo_scan():
                 "category": prompt_row["category"],
                 "prompt": prompt_row["prompt"],
                 "wake_tech_mentioned": mentioned,
-                "position": 1 if score >= 70 else 2 if score >= 55 else 0,
-                "competitors": demo_competitors(prompt_row["category"]),
-                "wake_tech_url": "https://www.waketech.edu" if mentioned == "Yes" else "",
+                "position": (
+                    1 if score >= 70
+                    else 2 if score >= 55
+                    else 0
+                ),
+                "competitors": demo_competitors(
+                    prompt_row["category"]
+                ),
+                "wake_tech_url": (
+                    "https://www.waketech.edu"
+                    if mentioned == "Yes"
+                    else ""
+                ),
                 "competitor_urls": "",
                 "score": score,
                 "notes": "Demo result generated from Prompt Library.",
@@ -79,7 +97,11 @@ def run_demo_scan():
 
     new_results = pd.DataFrame(new_rows)
 
-    updated = pd.concat([existing_results, new_results], ignore_index=True)
+    updated = pd.concat(
+        [existing_results, new_results],
+        ignore_index=True
+    )
+
     updated.to_csv(RESULTS_FILE, index=False)
 
     return {

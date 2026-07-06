@@ -1,11 +1,10 @@
 import time
-from datetime import datetime
 from pathlib import Path
-from services.scan import run_demo_scan
 
 import pandas as pd
 import streamlit as st
 
+from services.scan import run_demo_scan
 from components.executive_summary import show_executive_summary
 from components.metrics import show_metrics
 from components.charts import show_charts
@@ -19,6 +18,7 @@ st.set_page_config(
 
 RESULTS_FILE = Path("data/results.csv")
 df = pd.read_csv(RESULTS_FILE)
+df["_row_order"] = range(len(df))
 
 df["run_date"] = pd.to_datetime(df["run_date"], errors="coerce")
 df["scan_sort_date"] = df["run_date"]
@@ -68,7 +68,7 @@ if show_history:
 else:
     filtered = (
         filtered_all
-        .sort_values("run_date")
+        .sort_values("_row_order")
         .drop_duplicates(
             subset=["platform", "prompt_id"],
             keep="last"
@@ -81,7 +81,7 @@ valid_filtered_all = filtered_all[
 
 latest_scan_id = (
     valid_filtered_all
-    .sort_values(["scan_sort_date", "scan_id"])
+    .sort_values("_row_order")
     ["scan_id"]
     .iloc[-1]
     if not valid_filtered_all.empty
@@ -182,7 +182,10 @@ with st.container(border=True):
 show_executive_summary(filtered)
 
 st.divider()
-show_metrics(filtered, filtered_all)
+try:
+    show_metrics(filtered, filtered_all)
+except TypeError:
+    show_metrics(filtered)
 
 st.divider()
 show_charts(filtered, filtered_all)
