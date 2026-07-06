@@ -12,7 +12,6 @@ from components.charts import show_charts
 from components.prompt_explorer import show_prompt_explorer
 from components.insights import show_competitors, show_insights
 
-
 st.set_page_config(
     page_title="Wake Tech AI Search Intelligence",
     layout="wide"
@@ -92,10 +91,10 @@ with st.container(border=True):
         "actionable recommendations for improving AI visibility."
     )
 
-    st.warning(
-        "Prototype note: live AI scanning is not enabled yet. Current scan button simulates the workflow."
+    st.info(
+        "Run a demo visibility scan to add a new set of simulated AI platform responses."
     )
-    if st.button("▶ Run Demo Scan", type="primary"):
+    if st.button("▶ Run AI Visibility Scan", type="primary"):
         progress = st.progress(0)
         status = st.empty()
 
