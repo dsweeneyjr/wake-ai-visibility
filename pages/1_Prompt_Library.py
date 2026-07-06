@@ -112,6 +112,54 @@ if submitted:
 
         st.divider()
 
+st.divider()
+
+st.subheader("Edit Prompt")
+
+edit_options = {
+    f"{row['prompt_id']} — {row['prompt']}": row["prompt_id"]
+    for _, row in prompts.iterrows()
+}
+
+edit_label = st.selectbox(
+    "Select prompt to edit",
+    list(edit_options.keys()),
+    key="edit_prompt_select"
+)
+
+edit_id = edit_options[edit_label]
+edit_row = prompts[prompts["prompt_id"] == edit_id].iloc[0]
+
+with st.form("edit_prompt_form"):
+    edited_category = st.text_input(
+        "Category",
+        value=edit_row["category"]
+    )
+
+    edited_priority = st.selectbox(
+        "Priority",
+        ["High", "Medium", "Low"],
+        index=["High", "Medium", "Low"].index(edit_row["priority"])
+        if edit_row["priority"] in ["High", "Medium", "Low"] else 1
+    )
+
+    edited_prompt = st.text_area(
+        "Prompt",
+        value=edit_row["prompt"]
+    )
+
+    edit_submitted = st.form_submit_button("Save Changes")
+
+if edit_submitted:
+    prompts.loc[prompts["prompt_id"] == edit_id, "category"] = edited_category.strip()
+    prompts.loc[prompts["prompt_id"] == edit_id, "priority"] = edited_priority
+    prompts.loc[prompts["prompt_id"] == edit_id, "prompt"] = edited_prompt.strip()
+
+    prompts.to_csv(PROMPTS_FILE, index=False)
+
+    st.success(f"Updated prompt {edit_id}.")
+    st.rerun()
+
 st.subheader("Remove Prompt")
 
 prompt_options = {
