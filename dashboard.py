@@ -10,6 +10,7 @@ from components.metrics import show_metrics
 from components.charts import show_charts
 from components.prompt_explorer import show_prompt_explorer
 from components.insights import show_competitors, show_insights
+from components.trends import show_trends
 
 st.set_page_config(
     page_title="Wake Tech AI Search Intelligence",
@@ -109,34 +110,35 @@ with st.container(border=True):
     )
 
     st.info(
-        "Run a demo visibility scan to add a new set of simulated AI platform responses."
+        "Run a visibility scan to refresh AI platform results for the monitored prompts."
     )
     if latest_date is not None and pd.notna(latest_date):
         st.caption(f"Last scan: {latest_date.strftime('%b %d, %Y at %I:%M %p')}")
     else:
         st.caption("Last scan: Not available yet")
-        
-    if st.button("▶ Run AI Visibility Scan", type="primary"):
-        progress = st.progress(0)
-        status = st.empty()
 
-        status.write("🤖 Simulating ChatGPT scan...")
-        time.sleep(.8)
-        progress.progress(25)
+    scan_area = st.empty()
 
-        status.write("🧠 Simulating Gemini scan...")
-        time.sleep(.8)
-        progress.progress(50)
+    if st.button("▶ Run Visibility Scan", type="primary"):
+        with scan_area.container():
+            progress = st.progress(0)
+            status = st.empty()
 
-        status.write("🔍 Simulating Perplexity scan...")
-        time.sleep(.8)
-        progress.progress(75)
+            status.write("🤖 Simulating ChatGPT scan...")
+            time.sleep(.8)
+            progress.progress(25)
 
-        status.write("📊 Updating dashboard preview...")
-        time.sleep(.8)
-        progress.progress(100)
+            status.write("🧠 Simulating Gemini scan...")
+            time.sleep(.8)
+            progress.progress(50)
 
-        status.empty()
+            status.write("🔍 Simulating Perplexity scan...")
+            time.sleep(.8)
+            progress.progress(75)
+
+            status.write("📊 Updating dashboard preview...")
+            time.sleep(.8)
+            progress.progress(100)
 
         scan = run_demo_scan()
 
@@ -189,6 +191,9 @@ except TypeError:
 
 st.divider()
 show_charts(filtered, filtered_all)
+
+st.divider()
+show_trends(filtered_all)
 
 st.divider()
 show_prompt_explorer(filtered)

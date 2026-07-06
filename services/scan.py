@@ -12,7 +12,7 @@ PROMPTS_FILE = Path("prompts/prompts.csv")
 PLATFORMS = ["ChatGPT", "Gemini", "Perplexity"]
 
 
-def demo_score(platform, category):
+def baseline_score(platform, category):
     base_scores = {
         "ChatGPT": 68,
         "Gemini": 74,
@@ -27,15 +27,7 @@ def demo_score(platform, category):
         "Financial Aid": -3,
     }
 
-    variation = random.randint(-5, 5)
-
-    score = (
-        base_scores.get(platform, 60)
-        + category_adjustments.get(category, 0)
-        + variation
-    )
-
-    return max(0, min(100, score))
+    return base_scores.get(platform, 60) + category_adjustments.get(category, 0)
 
 
 def demo_competitors(category):
@@ -50,6 +42,21 @@ def demo_competitors(category):
     return competitors.get(category, "Durham Tech")
 
 
+def get_previous_score(existing_results, platform, prompt_id, category):
+    if existing_results.empty:
+        return None
+
+    matches = existing_results[
+        (existing_results["platform"] == platform) &
+        (existing_results["prompt_id"] == prompt_id)
+    ]
+
+    if matches.empty:
+        return None
+
+    return matches.iloc[-1]["score"]
+
+
 def run_demo_scan():
     prompts = pd.read_csv(PROMPTS_FILE)
     existing_results = pd.read_csv(RESULTS_FILE)
@@ -62,11 +69,19 @@ def run_demo_scan():
 
     for _, prompt_row in prompts.iterrows():
         for platform in PLATFORMS:
-            score = demo_score(
+            previous_score = get_previous_score(
+                existing_results,
                 platform,
+                prompt_row["prompt_id"],
                 prompt_row["category"]
             )
 
+            if previous_score is None or pd.isna(previous_score):
+                score = baseline_score(platform, prompt_row["category"])
+            else:
+                score = int(previous_score) + random.randint(-3, 4)
+
+            score = max(0, min(100, score))
             mentioned = "Yes" if score >= 55 else "No"
 
             new_rows.append({
@@ -82,9 +97,7 @@ def run_demo_scan():
                     else 2 if score >= 55
                     else 0
                 ),
-                "competitors": demo_competitors(
-                    prompt_row["category"]
-                ),
+                "competitors": demo_competitors(prompt_row["category"]),
                 "wake_tech_url": (
                     "https://www.waketech.edu"
                     if mentioned == "Yes"
@@ -92,7 +105,7 @@ def run_demo_scan():
                 ),
                 "competitor_urls": "",
                 "score": score,
-                "notes": "Demo result generated from Prompt Library.",
+                "notes": "Demo result generated from previous scan trend.",
             })
 
     new_results = pd.DataFrame(new_rows)
