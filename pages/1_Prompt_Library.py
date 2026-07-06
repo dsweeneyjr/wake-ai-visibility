@@ -62,20 +62,21 @@ st.subheader("Add New Prompt")
 existing_categories = sorted(prompts["category"].dropna().unique().tolist())
 category_options = existing_categories + ["Add new category..."]
 
-with st.form("add_prompt_form", clear_on_submit=True):
-    category_choice = st.selectbox(
-        "Category",
-        category_options,
-        index=0 if existing_categories else len(category_options) - 1
-    )
+category_choice = st.selectbox(
+    "Category",
+    category_options,
+    key="category_choice"
+)
 
-    new_category = ""
+with st.form("add_prompt_form", clear_on_submit=True):
 
     if category_choice == "Add new category...":
-        new_category = st.text_input(
+        category = st.text_input(
             "New Category",
             placeholder="Example: Cybersecurity"
         )
+    else:
+        category = category_choice
 
     priority = st.selectbox("Priority", ["High", "Medium", "Low"])
 
@@ -87,8 +88,6 @@ with st.form("add_prompt_form", clear_on_submit=True):
     submitted = st.form_submit_button("Add Prompt")
 
 if submitted:
-    category = new_category if category_choice == "Add new category..." else category_choice
-
     if not category.strip() or not prompt.strip():
         st.error("Category and prompt are required.")
     else:
