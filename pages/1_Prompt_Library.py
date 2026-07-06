@@ -109,3 +109,29 @@ if submitted:
 
         st.success(f"Added prompt {new_id}.")
         st.rerun()
+
+        st.divider()
+
+st.subheader("Remove Prompt")
+
+prompt_options = {
+    f"{row['prompt_id']} — {row['prompt']}": row["prompt_id"]
+    for _, row in prompts.iterrows()
+}
+
+prompt_to_delete_label = st.selectbox(
+    "Select prompt to remove",
+    list(prompt_options.keys())
+)
+
+prompt_to_delete_id = prompt_options[prompt_to_delete_label]
+
+if st.button("Delete Prompt", type="primary"):
+    updated = prompts[
+        prompts["prompt_id"] != prompt_to_delete_id
+    ]
+
+    updated.to_csv(PROMPTS_FILE, index=False)
+
+    st.success(f"Deleted prompt {prompt_to_delete_id}.")
+    st.rerun()
