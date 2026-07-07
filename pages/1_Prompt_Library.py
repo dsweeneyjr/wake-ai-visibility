@@ -10,6 +10,8 @@ st.set_page_config(
     layout="wide"
 )
 
+apply_wake_tech_style()
+
 st.title("Prompt Library")
 st.caption("Questions we want the AI tools to monitor over time.")
 

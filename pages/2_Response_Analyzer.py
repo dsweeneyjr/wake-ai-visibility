@@ -16,6 +16,8 @@ st.set_page_config(
     layout="wide"
 )
 
+apply_wake_tech_style()
+
 st.title("Response Analyzer")
 st.caption("Paste an AI response, analyze visibility, and save it to the dataset.")
 

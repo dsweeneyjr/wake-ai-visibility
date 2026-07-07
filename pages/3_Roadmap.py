@@ -6,6 +6,8 @@ st.set_page_config(
     layout="wide"
 )
 
+apply_wake_tech_style()
+
 st.title("Roadmap")
 
 with open("ROADMAP.md", "r") as file:

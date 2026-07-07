@@ -8,6 +8,8 @@ st.set_page_config(
     layout="wide"
 )
 
+apply_wake_tech_style()
+
 st.title("Recommendations")
 st.caption("Priority actions based on AI visibility results.")
 
