@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+from components.styles import apply_wake_tech_style
 
 
 st.set_page_config(

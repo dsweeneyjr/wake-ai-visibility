@@ -11,11 +11,13 @@ from components.charts import show_charts
 from components.prompt_explorer import show_prompt_explorer
 from components.insights import show_competitors, show_insights
 from components.trends import show_trends
+from components.styles import apply_wake_tech_style
 
 st.set_page_config(
     page_title="Wake Tech AI Search Intelligence",
     layout="wide"
 )
+apply_wake_tech_style()
 
 RESULTS_FILE = Path("data/results.csv")
 df = pd.read_csv(RESULTS_FILE)
@@ -205,5 +207,6 @@ st.divider()
 show_insights(filtered)
 
 st.divider()
-st.subheader("Results Data")
-st.dataframe(filtered, width="stretch")
+
+with st.expander("View Results Data"):
+    st.dataframe(filtered, width="stretch")

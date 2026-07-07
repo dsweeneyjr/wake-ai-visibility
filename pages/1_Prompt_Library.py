@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 from pathlib import Path
+from components.styles import apply_wake_tech_style
 
 PROMPTS_FILE = Path("prompts/prompts.csv")
 

@@ -1,6 +1,7 @@
 import re
 from datetime import datetime
 from pathlib import Path
+from components.styles import apply_wake_tech_style
 
 import pandas as pd
 import streamlit as st
