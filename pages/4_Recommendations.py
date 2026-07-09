@@ -142,6 +142,19 @@ else:
 
     top_category = category_summary.iloc[0]["category"]
 
+    st.subheader("Top Recommendations Summary")
+
+    top_issues = opportunities.head(5)
+
+    for i, (_, issue) in enumerate(top_issues.iterrows(), start=1):
+        st.write(
+            f"**{i}. {issue['category']} / {issue['platform']}** — "
+            f"Score {issue['score']}. "
+            f"{'Wake Tech was not mentioned.' if issue['wake_tech_mentioned'] == 'No' else 'Wake Tech needs stronger visibility.'}"
+        )
+
+    st.divider()
+
     st.warning(
         f"Start with **{top_category}**. It has the highest-priority visibility issues "
         "in the latest scan."
