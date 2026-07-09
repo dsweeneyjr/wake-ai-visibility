@@ -173,8 +173,22 @@ def apply_wake_tech_style():
 
         div[data-testid="stExpander"] {
             border-left: 5px solid #eaaa00 !important;
+            border-radius: 0 8px 8px 0 !important;
+            overflow: hidden !important;
         }
 
+        div[data-testid="stExpander"] details {
+            border-radius: 0 8px 8px 0 !important;
+        }
+
+        div[data-testid="stExpander"] summary {
+            border-radius: 0 8px 8px 0 !important;
+        }
+
+        div[data-testid="stExpander"] > details {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+        }
 
         /* ========================================
            LINKS
