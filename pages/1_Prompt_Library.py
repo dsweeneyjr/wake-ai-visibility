@@ -42,19 +42,15 @@ filtered_prompts = prompts.copy()
 
 if search:
     filtered_prompts = filtered_prompts[
-        filtered_prompts["prompt"].str.contains(search, case=False, na=False) |
-        filtered_prompts["category"].str.contains(search, case=False, na=False)
+        filtered_prompts["prompt"].str.contains(search, case=False, na=False)
+        | filtered_prompts["category"].str.contains(search, case=False, na=False)
     ]
 
 if category_filter != "All":
-    filtered_prompts = filtered_prompts[
-        filtered_prompts["category"] == category_filter
-    ]
+    filtered_prompts = filtered_prompts[filtered_prompts["category"] == category_filter]
 
 if priority_filter != "All":
-    filtered_prompts = filtered_prompts[
-        filtered_prompts["priority"] == priority_filter
-    ]
+    filtered_prompts = filtered_prompts[filtered_prompts["priority"] == priority_filter]
 
 st.dataframe(filtered_prompts, use_container_width=True)
 
@@ -71,16 +67,16 @@ category_choice = st.selectbox(
     key="category_choice"
 )
 
+if category_choice == "Add new category...":
+    category = st.text_input(
+        "New Category",
+        placeholder="Example: Workforce Training",
+        key="new_category_input"
+    )
+else:
+    category = category_choice
+
 with st.form("add_prompt_form", clear_on_submit=True):
-
-    if category_choice == "Add new category...":
-        category = st.text_input(
-            "New Category",
-            placeholder="Example: Cybersecurity"
-        )
-    else:
-        category = category_choice
-
     priority = st.selectbox("Priority", ["High", "Medium", "Low"])
 
     prompt = st.text_area(
@@ -112,8 +108,6 @@ if submitted:
 
         st.success(f"Added prompt {new_id}.")
         st.rerun()
-
-        st.divider()
 
 st.divider()
 
@@ -163,6 +157,8 @@ if edit_submitted:
     st.success(f"Updated prompt {edit_id}.")
     st.rerun()
 
+st.divider()
+
 st.subheader("Remove Prompt")
 
 prompt_options = {
@@ -178,10 +174,7 @@ prompt_to_delete_label = st.selectbox(
 prompt_to_delete_id = prompt_options[prompt_to_delete_label]
 
 if st.button("Delete Prompt", type="primary"):
-    updated = prompts[
-        prompts["prompt_id"] != prompt_to_delete_id
-    ]
-
+    updated = prompts[prompts["prompt_id"] != prompt_to_delete_id]
     updated.to_csv(PROMPTS_FILE, index=False)
 
     st.success(f"Deleted prompt {prompt_to_delete_id}.")
