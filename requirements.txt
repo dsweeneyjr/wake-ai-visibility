@@ -1,5 +1,7 @@
 openai
+google-genai
 pandas
 python-dotenv
 streamlit
+altair
 plotly

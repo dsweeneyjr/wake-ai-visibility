@@ -1,18 +1,23 @@
-import os
+import sys
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(BASE_DIR))
+
 import re
 from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
-from openai import OpenAI
-from openai import OpenAI, RateLimitError
+
+from services.ai_client import run_prompt
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROMPTS_FILE = BASE_DIR / "prompts" / "prompts.csv"
 RESULTS_FILE = BASE_DIR / "data" / "results.csv"
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+MODEL = "gpt-5"
 
 
 KNOWN_COMPETITORS = [
@@ -30,31 +35,19 @@ KNOWN_COMPETITORS = [
 ]
 
 
-def ask_openai(prompt):
-    try:
-        response = client.responses.create(
-            model="gpt-4.1-mini",
-            input=f"""
-You are answering as an AI search assistant.
+def analyze_response(response_text: str) -> dict:
+    """
+    Analyze an AI response for Wake Tech mentions, links,
+    competitors, ranking position, and visibility score.
+    """
 
-Question:
-{prompt}
-"""
-        )
-
-        return response.output_text
-
-    except RateLimitError as e:
-        if "insufficient_quota" in str(e):
-            print("OpenAI API quota unavailable. Check API billing and credits.")
-            return None
-
-        raise
-
-def analyze_response(response_text):
     text = response_text.lower()
 
-    wake_mentioned = "wake tech" in text or "wake technical" in text
+    wake_mentioned = (
+        "wake tech" in text
+        or "wake technical" in text
+        or "wake technical community college" in text
+    )
 
     competitors = [
         competitor
@@ -62,15 +55,23 @@ def analyze_response(response_text):
         if competitor.lower() in text
     ]
 
-    urls = re.findall(r"https?://\\S+", response_text)
+    urls = re.findall(r"https?://\S+", response_text)
+
+    # Remove punctuation that may appear immediately after a URL.
+    urls = [
+        url.rstrip(".,;:!?)]}\"'")
+        for url in urls
+    ]
 
     wake_urls = [
-        url for url in urls
+        url
+        for url in urls
         if "waketech.edu" in url.lower()
     ]
 
     competitor_urls = [
-        url for url in urls
+        url
+        for url in urls
         if "waketech.edu" not in url.lower()
     ]
 
@@ -108,27 +109,92 @@ def analyze_response(response_text):
     }
 
 
-def main():
-    prompts = pd.read_csv(PROMPTS_FILE)
-    existing_results = pd.read_csv(RESULTS_FILE)
+def load_existing_results() -> pd.DataFrame:
+    """
+    Load existing results safely.
 
+    Returns an empty DataFrame when the results file does not yet exist
+    or exists without any rows.
+    """
+
+    if not RESULTS_FILE.exists():
+        return pd.DataFrame()
+
+    try:
+        return pd.read_csv(RESULTS_FILE)
+    except pd.errors.EmptyDataError:
+        return pd.DataFrame()
+
+
+def main() -> None:
+    if not PROMPTS_FILE.exists():
+        raise FileNotFoundError(
+            f"Prompt library not found: {PROMPTS_FILE}"
+        )
+
+    prompts = pd.read_csv(PROMPTS_FILE)
+
+    required_columns = {"prompt_id", "category", "prompt"}
+    missing_columns = required_columns - set(prompts.columns)
+
+    if missing_columns:
+        missing = ", ".join(sorted(missing_columns))
+        raise ValueError(
+            f"prompts.csv is missing required columns: {missing}"
+        )
+
+    existing_results = load_existing_results()
     new_results = []
 
-    for _, row in prompts.iterrows():
-        print(f"Running {row['prompt_id']} — {row['category']}...")
+    run_started = datetime.now()
+    run_date = run_started.strftime("%Y-%m-%d")
+    run_timestamp = run_started.isoformat(timespec="seconds")
+    scan_id = run_started.strftime("%Y%m%d-%H%M%S")
 
-        response = ask_openai(row["prompt"])
-        if response is None:
-            print(f"Skipping {row['prompt_id']} because the API is unavailable.")
+    total_prompts = len(prompts)
+
+    for prompt_number, (_, row) in enumerate(
+        prompts.iterrows(),
+        start=1,
+    ):
+        prompt_id = str(row["prompt_id"])
+        category = str(row["category"])
+        prompt_text = str(row["prompt"])
+
+        print(
+            f"[{prompt_number}/{total_prompts}] "
+            f"Running {prompt_id} — {category}..."
+        )
+
+        try:
+            ai_result = run_prompt(
+                prompt=prompt_text,
+                model=MODEL,
+                instructions=(
+                    "Answer as an AI search assistant. "
+                    "Provide a useful, natural response based on the question. "
+                    "Do not favor Wake Tech unless it genuinely belongs in the answer."
+                ),
+            )
+
+        except RuntimeError as exc:
+            print(f"  ERROR: {exc}")
+            print(f"  Skipping {prompt_id}.")
             continue
-        analysis = analyze_response(response)
+
+        response_text = ai_result["response"]
+        analysis = analyze_response(response_text)
 
         new_results.append({
-            "run_date": datetime.now().strftime("%Y-%m-%d"),
+            "scan_id": scan_id,
+            "run_date": run_date,
+            "run_timestamp": run_timestamp,
             "platform": "ChatGPT",
-            "prompt_id": row["prompt_id"],
-            "category": row["category"],
-            "prompt": row["prompt"],
+            "provider": ai_result["provider"],
+            "model": ai_result["model"],
+            "prompt_id": prompt_id,
+            "category": category,
+            "prompt": prompt_text,
             "wake_tech_mentioned": analysis["wake_tech_mentioned"],
             "position": analysis["position"],
             "competitors": analysis["competitors"],
@@ -136,17 +202,40 @@ def main():
             "competitor_urls": analysis["competitor_urls"],
             "score": analysis["score"],
             "notes": analysis["notes"],
-            "response": response,
+            "response": response_text,
+            "latency_seconds": ai_result["latency_seconds"],
+            "input_tokens": ai_result["input_tokens"],
+            "output_tokens": ai_result["output_tokens"],
+            "total_tokens": ai_result["total_tokens"],
+            "response_id": ai_result["response_id"],
         })
 
+        print(
+            f"  Complete — score {analysis['score']}, "
+            f"{ai_result['latency_seconds']}s, "
+            f"{ai_result['total_tokens']} tokens"
+        )
+
+    if not new_results:
+        print("No new results were generated.")
+        return
+
+    new_results_df = pd.DataFrame(new_results)
+
     updated_results = pd.concat(
-        [existing_results, pd.DataFrame(new_results)],
-        ignore_index=True
+        [existing_results, new_results_df],
+        ignore_index=True,
+        sort=False,
     )
 
+    RESULTS_FILE.parent.mkdir(parents=True, exist_ok=True)
     updated_results.to_csv(RESULTS_FILE, index=False)
 
-    print(f"Done. Added {len(new_results)} new results to {RESULTS_FILE}")
+    print()
+    print(
+        f"Done. Added {len(new_results)} new results "
+        f"to {RESULTS_FILE}"
+    )
 
 
 if __name__ == "__main__":
