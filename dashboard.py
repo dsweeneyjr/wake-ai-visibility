@@ -21,6 +21,7 @@ apply_wake_tech_style()
 
 RESULTS_FILE = Path("data/results.csv")
 df = pd.read_csv(RESULTS_FILE)
+df["scan_id"] = df["scan_id"].astype(str)
 df["_row_order"] = range(len(df))
 
 df["run_date"] = pd.to_datetime(df["run_date"], errors="coerce")
