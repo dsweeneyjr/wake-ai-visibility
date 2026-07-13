@@ -94,7 +94,7 @@ Quick pick guidance
 - Best value if cost is key: ADN at a local community college (e.g., Wake Tech, Durham Tech) + a 1‑year online RN‑to‑BSN.
 - Small‑cohort BSN close to Raleigh: Campbell or Watts.
 
-If you share your background (first degree or second degree, timeline, budget, and how far you’ll commute), I can narrow this to the top 2–3 programs for you and outline exact prerequisites and deadlines.",20260713-123239,2026-07-13T12:32:39,openai,gpt-5-2025-08-07,45.894,52.0,2941.0,2993.0,resp_0a455cfe1fef4836006a54dae91f7881928d7c98dd319fd292
+If you share your background (first degree or second degree, timeline, budget, and how far you’ll commute), I can narrow this to the top 2–3 programs for you and outline exact prerequisites and deadlines.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,45.894,52.0,2941.0,2993.0,resp_0a455cfe1fef4836006a54dae91f7881928d7c98dd319fd292
 2026-07-13,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,2,,,https://www.cfnc.org/|https://ncresidency.org/|https://studentaid.gov/,60,"Wake Tech was mentioned, but visibility appears weak.","Here’s a quick roadmap to apply to Wake Technical Community College (degree/certificate programs):
 
 1) Pick your program and term
@@ -132,7 +132,7 @@ Timing and help
 - Admissions are generally rolling, but apply early to get advising and financial aid in place.
 - If you’re unsure where to start, go to waketech.edu and navigate to Admissions & Aid > Apply, or search “Wake Tech apply” for the official page. You can also contact Admissions from that page for live help.
 
-If you tell me which program and term you’re targeting (and whether you’re a first-time, transfer, international, or CCP student), I can tailor the exact steps and links.",20260713-123239,2026-07-13T12:32:39,openai,gpt-5-2025-08-07,34.362,49.0,2153.0,2202.0,resp_0cd83d5f746bee47006a54db15964c819c87f03b4d60262db3
+If you tell me which program and term you’re targeting (and whether you’re a first-time, transfer, international, or CCP student), I can tailor the exact steps and links.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,34.362,49.0,2153.0,2202.0,resp_0cd83d5f746bee47006a54db15964c819c87f03b4d60262db3
 2026-07-13,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,Durham Tech|Central Piedmont|UNC|ECU|Fayetteville Tech,,,40,"Wake Tech was mentioned, but visibility appears weak.","Short answer: there isn’t a single “best” community college for cybersecurity in North Carolina. Employers tend to care most about NSA/DHS Center of Academic Excellence in Cyber Defense (CAE-CD) status, hands‑on labs, certification prep, internships/apprenticeships, and job outcomes. Several NC community colleges check many of those boxes.
 
 Common top choices to look at first
@@ -152,7 +152,7 @@ How to pick the best fit for you
 - Review outcomes: recent job placement, average time to first role, and where graduates land.
 - See transfer/articulation options if you might continue to a bachelor’s (e.g., agreements with UNC system or private cybersecurity programs).
 
-If you share where you live, whether you prefer online or in‑person, and your target role (SOC analyst, pen tester, digital forensics, cloud security), I can narrow this to the 2–3 strongest programs for your situation and point you to specific course sequences and contacts.",20260713-123239,2026-07-13T12:32:39,openai,gpt-5-2025-08-07,60.204,53.0,2233.0,2286.0,resp_07b8eb8139060a58006a54db37f4cc819e87e4beac95086782
+If you share where you live, whether you prefer online or in‑person, and your target role (SOC analyst, pen tester, digital forensics, cloud security), I can narrow this to the 2–3 strongest programs for your situation and point you to specific course sequences and contacts.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,60.204,53.0,2233.0,2286.0,resp_07b8eb8139060a58006a54db37f4cc819e87e4beac95086782
 2026-07-13,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,2,Durham Tech|Central Piedmont|NC State|Johnston Community College,,,40,"Wake Tech was mentioned, but visibility appears weak.","There isn’t a single “best” North Carolina community college for NC State engineering transfers. NC State admits strong applicants from many NC community colleges. What matters most is picking a college that:
 
 - Offers the Associate in Engineering (AE) under the statewide Uniform Articulation Agreement
@@ -169,7 +169,7 @@ Tips to maximize your chances:
 - Ask the college about: AE pathway details, how often Calc III/Diff Eq/Statics run, engineering clubs, and whether they’re a C3 partner or have on-site/regular NC State advising.
 - If you’re near Raleigh, ask about co-advising or occasional NC State coursework to stay aligned on labs and programming (MATLAB/C).
 
-If you share your location and intended engineering major, I can suggest the most practical community colleges near you and the exact course plan to match NC State’s requirements.",20260713-123239,2026-07-13T12:32:39,openai,gpt-5-2025-08-07,26.253,54.0,2082.0,2136.0,resp_0f4d48025df9a600006a54db742560819c978713fa26805f46
+If you share your location and intended engineering major, I can suggest the most practical community colleges near you and the exact course plan to match NC State’s requirements.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,26.253,54.0,2082.0,2136.0,resp_0f4d48025df9a600006a54db742560819c978713fa26805f46
 2026-07-13,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,2,Durham Tech|Central Piedmont|UNC|Fayetteville Tech,,,40,"Wake Tech was mentioned, but visibility appears weak.","Short answer: there isn’t a single, official “best financial aid” ranking for North Carolina community colleges. Tuition and state/federal aid are largely standardized across the 58 colleges, so the biggest differences come from each college’s foundation scholarships, local “promise” programs, emergency aid, and advising capacity. The best fit for you will depend on your county, program, and eligibility.
 
 What’s consistent statewide
@@ -204,4 +204,4 @@ Steps to maximize your aid anywhere in NC
 - If you’re close to finishing, ask about completion/emergency grants.
 - If you’re in high school, use Career & College Promise to cut costs before enrolling full‑time.
 
-If you share your county/region, program of interest, and whether you’re a recent grad, working adult, or veteran, I can point you to the NC community colleges and local programs that typically yield the most aid for your situation.",20260713-123239,2026-07-13T12:32:39,openai,gpt-5-2025-08-07,65.639,53.0,3368.0,3421.0,resp_0ca1d8fc308514f9006a54db8e6c6081a2bcef865c9002e804
+If you share your county/region, program of interest, and whether you’re a recent grad, working adult, or veteran, I can point you to the NC community colleges and local programs that typically yield the most aid for your situation.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,65.639,53.0,3368.0,3421.0,resp_0ca1d8fc308514f9006a54db8e6c6081a2bcef865c9002e804

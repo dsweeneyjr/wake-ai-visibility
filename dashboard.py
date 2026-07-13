@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-from services.scan import run_demo_scan
+from services.scan import run_live_scan
 from components.executive_summary import show_executive_summary
 from components.metrics import show_metrics
 from components.charts import show_charts
@@ -24,22 +24,61 @@ df = pd.read_csv(RESULTS_FILE)
 df["scan_id"] = df["scan_id"].astype(str)
 df["_row_order"] = range(len(df))
 
-df["run_date"] = pd.to_datetime(df["run_date"], errors="coerce")
-df["scan_sort_date"] = df["run_date"]
-
-df.loc[
-    df["scan_sort_date"].isna() & df["scan_id"].notna(),
-    "scan_sort_date"
-] = pd.to_datetime(
-    df["scan_id"].astype(str).str[:14],
-    format="%Y%m%d%H%M%S",
-    errors="coerce"
+df["run_date"] = pd.to_datetime(
+    df["run_date"],
+    errors="coerce",
 )
-if "scan_id" not in df.columns:
-    df["scan_id"] = df["run_date"].astype(str)
+
+if "run_timestamp" in df.columns:
+    df["scan_sort_date"] = (
+        pd.to_datetime(
+            df["run_timestamp"],
+            errors="coerce",
+            utc=True,
+        )
+        .dt.tz_convert("America/New_York")
+    )
+else:
+    df["scan_sort_date"] = df["run_date"]
+
+missing_scan_dates = df["scan_sort_date"].isna()
+
+fallback_dates = pd.to_datetime(
+    df.loc[missing_scan_dates, "scan_id"]
+    .astype(str)
+    .str.replace("-", "", regex=False)
+    .str[:14],
+    format="%Y%m%d%H%M%S",
+    errors="coerce",
+)
+
+df.loc[missing_scan_dates, "scan_sort_date"] = (
+    fallback_dates
+    .dt.tz_localize("America/New_York")
+)
+
+df["run_date"] = pd.to_datetime(
+    df["run_date"],
+    errors="coerce",
+)
+
+if "run_timestamp" in df.columns:
+    df["scan_sort_date"] = (
+        pd.to_datetime(
+            df["run_timestamp"],
+            errors="coerce",
+            utc=True,
+        )
+        .dt.tz_convert("America/New_York")
+    )
+else:
+    df["scan_sort_date"] = df["run_date"]
 
 st.title("Wake Tech AI Search Intelligence")
-st.caption("Decision-support prototype for tracking how AI tools recommend Wake Tech.")
+st.caption(
+    "Monitor how leading AI platforms recommend Wake Tech, "
+    "identify visibility gaps, and track performance over time."
+)
 if "scan_message" in st.session_state:
     st.success(st.session_state["scan_message"])
     del st.session_state["scan_message"]
@@ -107,13 +146,13 @@ latest_date = (
 with st.container(border=True):
     st.markdown("### Executive Summary")
     st.write(
-        "This prototype measures how AI search engines recommend Wake Tech, "
-        "tracks competitors, identifies content opportunities, and provides "
-        "actionable recommendations for improving AI visibility."
+        "Track how AI platforms recommend Wake Tech, compare competitor visibility, "
+        "identify content opportunities, and measure changes across repeated scans."
     )
 
     st.info(
-        "Run a visibility scan to refresh AI platform results for the monitored prompts."
+        "Run a live visibility scan to ask OpenAI the monitored student questions "
+        "and immediately analyze the results."
     )
     if latest_date is not None and pd.notna(latest_date):
         st.caption(f"Last scan: {latest_date.strftime('%b %d, %Y at %I:%M %p')}")
@@ -122,35 +161,80 @@ with st.container(border=True):
 
     scan_area = st.empty()
 
-    if st.button("▶ Run Visibility Scan", type="primary"):
-        with scan_area.container():
-            progress = st.progress(0)
-            status = st.empty()
+if st.button(
+    "▶ Run Live Visibility Scan",
+    type="primary",
+    use_container_width=False,
+):
+    progress = scan_area.progress(0)
+    status = st.empty()
+    current_prompt_box = st.empty()
+    scan_started = time.perf_counter()
 
-            status.write("🤖 Simulating ChatGPT scan...")
-            time.sleep(.8)
-            progress.progress(25)
+    def update_scan_progress(
+        completed: int,
+        total: int,
+        prompt_id: str,
+        category: str,
+        prompt_text: str,
+    ) -> None:
+        percent = int((completed / total) * 100) if total else 0
+        display_number = min(completed + 1, total)
+        elapsed = time.perf_counter() - scan_started
 
-            status.write("🧠 Simulating Gemini scan...")
-            time.sleep(.8)
-            progress.progress(50)
+        progress.progress(
+            percent,
+            text=f"Scanning prompt {display_number} of {total}",
+        )
 
-            status.write("🔍 Simulating Perplexity scan...")
-            time.sleep(.8)
-            progress.progress(75)
+        status.markdown(
+            f"**OpenAI · GPT-5**  \n"
+            f"Category: **{category}**  \n"
+            f"Elapsed time: **{elapsed:.1f} seconds**"
+        )
 
-            status.write("📊 Updating dashboard preview...")
-            time.sleep(.8)
-            progress.progress(100)
+        current_prompt_box.info(
+            f"**Current question**\n\n{prompt_text}"
+        )
 
-        scan = run_demo_scan()
+    try:
+        with st.spinner("Running live AI visibility scan..."):
+            scan = run_live_scan(
+                progress_callback=update_scan_progress
+            )
+
+        elapsed = time.perf_counter() - scan_started
+
+        progress.progress(
+            100,
+            text="Visibility scan complete",
+        )
+
+        current_prompt_box.empty()
+
+        status.success(
+            f"Completed {scan['responses']} live AI responses "
+            f"in {elapsed:.1f} seconds."
+        )
 
         st.session_state["scan_message"] = (
-            f"Demo scan complete. Added {scan['responses']} demo results across "
-            f"{scan['platforms']} platforms. Average score: {scan['avg_score']}."
+            f"Live scan complete. Added {scan['responses']} responses with "
+            f"an average visibility score of {scan['avg_score']}. "
+            f"OpenAI used {scan['total_tokens']:,} tokens."
         )
 
         st.rerun()
+
+    except Exception as exc:
+        progress.empty()
+        status.empty()
+        current_prompt_box.empty()
+
+        st.error(
+            "The live visibility scan could not be completed."
+        )
+
+        st.exception(exc)
 
 
 with st.container(border=True):
@@ -160,7 +244,7 @@ with st.container(border=True):
 
     if latest_scan.empty or pd.isna(latest_date):
         col1.metric("Latest Date", "N/A")
-        col2.metric("Platforms", 0)
+        col2.metric("Provider", "N/A")
         col3.metric("Responses", 0)
         col4.metric("Avg Score", 0)
     else:
@@ -169,20 +253,101 @@ with st.container(border=True):
             latest_date.strftime("%b %d, %Y")
         )
 
+        if "provider" in latest_scan.columns:
+            providers = (
+                latest_scan["provider"]
+                .dropna()
+                .astype(str)
+                .str.title()
+                .unique()
+            )
+            provider_display = ", ".join(providers) or "OpenAI"
+        else:
+            provider_display = ", ".join(
+                latest_scan["platform"]
+                .dropna()
+                .astype(str)
+                .unique()
+            )
+
         col2.metric(
-            "Platforms",
-            latest_scan["platform"].nunique()
+            "Provider",
+            provider_display
         )
 
         col3.metric(
             "Responses",
             len(latest_scan)
-       )
+        )
 
         col4.metric(
             "Avg Score",
             round(latest_scan["score"].mean(), 1)
         )
+
+st.subheader("Latest AI Responses")
+
+if latest_scan.empty:
+    st.info("Run a live visibility scan to view AI responses.")
+else:
+    response_rows = latest_scan.sort_values(
+        ["category", "prompt_id"]
+    )
+
+    for _, response_row in response_rows.iterrows():
+        category = str(response_row.get("category", "Uncategorized"))
+        prompt_id = str(response_row.get("prompt_id", ""))
+        score = response_row.get("score", 0)
+        prompt_text = str(response_row.get("prompt", ""))
+        response_text = str(response_row.get("response", ""))
+
+        latency = response_row.get("latency_seconds")
+        total_tokens = response_row.get("total_tokens")
+        model = str(response_row.get("model", "OpenAI"))
+
+        expander_title = (
+            f"{category} · Score {score}"
+        )
+
+        with st.expander(expander_title):
+            st.markdown("#### Student question")
+            st.write(prompt_text)
+
+            st.markdown("#### AI response")
+            st.write(response_text)
+
+            metric1, metric2, metric3 = st.columns(3)
+
+            metric1.metric(
+                "Score",
+                score
+            )
+
+            if pd.notna(latency):
+                metric2.metric(
+                    "Latency",
+                    f"{float(latency):.1f} sec"
+                )
+            else:
+                metric2.metric(
+                    "Latency",
+                    "N/A"
+                )
+
+            if pd.notna(total_tokens):
+                metric3.metric(
+                    "Tokens",
+                    f"{int(total_tokens):,}"
+                )
+            else:
+                metric3.metric(
+                    "Tokens",
+                    "N/A"
+                )
+
+            st.caption(
+                f"Prompt ID: {prompt_id} · Model: {model}"
+            )
 
 show_executive_summary(filtered)
 
