@@ -13,6 +13,7 @@ def show_progress(
     total: int,
     prompt_id: str,
     category: str,
+    prompt_text: str,
 ) -> None:
     if completed < total:
         print(

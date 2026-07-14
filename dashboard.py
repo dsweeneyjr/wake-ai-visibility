@@ -9,7 +9,11 @@ from components.executive_summary import show_executive_summary
 from components.metrics import show_metrics
 from components.charts import show_charts
 from components.prompt_explorer import show_prompt_explorer
-from components.insights import show_competitors, show_insights
+from components.insights import (
+    show_competitors,
+    show_competitor_wins,
+    show_insights,
+)
 from components.trends import show_trends
 from components.styles import apply_wake_tech_style
 
@@ -55,11 +59,6 @@ fallback_dates = pd.to_datetime(
 df.loc[missing_scan_dates, "scan_sort_date"] = (
     fallback_dates
     .dt.tz_localize("America/New_York")
-)
-
-df["run_date"] = pd.to_datetime(
-    df["run_date"],
-    errors="coerce",
 )
 
 if "run_timestamp" in df.columns:
@@ -285,7 +284,7 @@ with st.container(border=True):
             round(latest_scan["score"].mean(), 1)
         )
 
-st.subheader("Latest AI Responses")
+st.subheader("AI Response Explorer")
 
 if latest_scan.empty:
     st.info("Run a live visibility scan to view AI responses.")
@@ -295,54 +294,127 @@ else:
     )
 
     for _, response_row in response_rows.iterrows():
-        category = str(response_row.get("category", "Uncategorized"))
-        prompt_id = str(response_row.get("prompt_id", ""))
-        score = response_row.get("score", 0)
-        prompt_text = str(response_row.get("prompt", ""))
-        response_text = str(response_row.get("response", ""))
+        category = str(
+            response_row.get("category", "Uncategorized")
+        )
+        prompt_id = str(
+            response_row.get("prompt_id", "")
+        )
+        score = float(
+            response_row.get("score", 0)
+        )
+        prompt_text = str(
+            response_row.get("prompt", "")
+        )
+        response_text = str(
+            response_row.get("response", "")
+        )
 
         latency = response_row.get("latency_seconds")
         total_tokens = response_row.get("total_tokens")
-        model = str(response_row.get("model", "OpenAI"))
+        model = str(
+            response_row.get("model", "OpenAI")
+        )
+
+        strengths = response_row.get("strengths", "")
+        weaknesses = response_row.get("weaknesses", "")
+        recommendations = response_row.get(
+            "recommendations",
+            "",
+        )
+
+        if score >= 90:
+            score_icon = "🟢"
+        elif score >= 70:
+            score_icon = "🟡"
+        else:
+            score_icon = "🔴"
 
         expander_title = (
-            f"{category} · Score {score}"
+            f"{score_icon} {category} · Visibility Score {score:.0f}"
         )
 
         with st.expander(expander_title):
-            st.markdown("#### Student question")
+            st.markdown("#### Student Question")
             st.write(prompt_text)
 
-            st.markdown("#### AI response")
+            st.markdown("#### AI Response")
             st.write(response_text)
 
             metric1, metric2, metric3 = st.columns(3)
 
             metric1.metric(
-                "Score",
-                score
+                "Visibility Score (0–100)",
+                f"{score:.0f}",
             )
 
             if pd.notna(latency):
                 metric2.metric(
-                    "Latency",
-                    f"{float(latency):.1f} sec"
+                    "AI Response Time",
+                    f"{float(latency):.1f} sec",
                 )
             else:
                 metric2.metric(
-                    "Latency",
-                    "N/A"
+                    "AI Response Time",
+                    "N/A",
                 )
 
             if pd.notna(total_tokens):
                 metric3.metric(
-                    "Tokens",
-                    f"{int(total_tokens):,}"
+                    "Response Length",
+                    f"{int(total_tokens):,} tokens",
                 )
             else:
                 metric3.metric(
-                    "Tokens",
-                    "N/A"
+                    "Response Length",
+                    "N/A",
+                )
+
+            st.divider()
+            st.markdown("#### AI Evaluation")
+
+            evaluation_col1, evaluation_col2 = st.columns(2)
+
+            with evaluation_col1:
+                st.markdown("##### Strengths")
+
+                if pd.notna(strengths) and str(strengths).strip():
+                    for item in str(strengths).split("|"):
+                        item = item.strip()
+
+                        if item:
+                            st.success(item)
+                else:
+                    st.info("No specific strengths identified.")
+
+            with evaluation_col2:
+                st.markdown("##### Weaknesses")
+
+                if pd.notna(weaknesses) and str(weaknesses).strip():
+                    for item in str(weaknesses).split("|"):
+                        item = item.strip()
+
+                        if item:
+                            st.warning(item)
+                else:
+                    st.success(
+                        "No major visibility weaknesses identified."
+                    )
+
+            st.markdown("##### Recommended Improvements")
+
+            if (
+                pd.notna(recommendations)
+                and str(recommendations).strip()
+            ):
+                for item in str(recommendations).split("|"):
+                    item = item.strip()
+
+                    if item:
+                        st.info(f"💡 {item}")
+            else:
+                st.info(
+                    "No additional improvements were recommended."
                 )
 
             st.caption(
@@ -368,6 +440,9 @@ show_prompt_explorer(filtered)
 
 st.divider()
 show_competitors(filtered)
+
+st.divider()
+show_competitor_wins(filtered)
 
 st.divider()
 show_insights(filtered)

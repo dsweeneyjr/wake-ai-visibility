@@ -7,6 +7,7 @@ from typing import Callable
 import pandas as pd
 
 from services.ai_client import run_prompt
+from services.evaluator import evaluate_response
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -159,13 +160,14 @@ def run_live_scan(
         category = str(row["category"])
         prompt_text = str(row["prompt"])
 
-        progress_callback(
-            prompt_number - 1,
-            total_prompts,
-            prompt_id,
-            category,
-            prompt_text,
-        )
+        if progress_callback:
+            progress_callback(
+                prompt_number - 1,
+                total_prompts,
+                prompt_id,
+                category,
+                prompt_text,
+            )
 
         ai_result = run_prompt(
             prompt=prompt_text,
@@ -179,7 +181,11 @@ def run_live_scan(
         )
 
         response_text = ai_result["response"]
-        analysis = analyze_response(response_text)
+
+        analysis = evaluate_response(
+            prompt_text,
+            response_text,
+        )
 
         new_results.append({
             "scan_id": scan_id,
@@ -191,13 +197,31 @@ def run_live_scan(
             "prompt_id": prompt_id,
             "category": category,
             "prompt": prompt_text,
-            "wake_tech_mentioned": analysis["wake_tech_mentioned"],
-            "position": analysis["position"],
-            "competitors": analysis["competitors"],
-            "wake_tech_url": analysis["wake_tech_url"],
-            "competitor_urls": analysis["competitor_urls"],
+            "wake_tech_mentioned": (
+                "Yes" if analysis["wake_mentioned"] else "No"
+            ),
+            "position": analysis["wake_rank"],
+            "competitors": "|".join(
+                analysis["competitors"]
+            ),
+            "wake_tech_url": "",
+            "competitor_urls": "",
             "score": analysis["score"],
-            "notes": analysis["notes"],
+            "sentiment": analysis["sentiment"],
+            "strengths": "|".join(
+                analysis["strengths"]
+            ),
+            "weaknesses": "|".join(
+                analysis["weaknesses"]
+            ),
+            "recommendations": "|".join(
+                analysis["recommendations"]
+            ),
+            "notes": (
+                " | ".join(analysis["weaknesses"])
+                if analysis["weaknesses"]
+                else "No major visibility weaknesses identified."
+            ),
             "response": response_text,
             "latency_seconds": ai_result["latency_seconds"],
             "input_tokens": ai_result["input_tokens"],
@@ -206,13 +230,14 @@ def run_live_scan(
             "response_id": ai_result["response_id"],
         })
 
-        progress_callback(
-            prompt_number,
-            total_prompts,
-            prompt_id,
-            category,
-            prompt_text,
-        )
+        if progress_callback:
+            progress_callback(
+                prompt_number,
+                total_prompts,
+                prompt_id,
+                category,
+                prompt_text,
+            )
 
     if not new_results:
         return {

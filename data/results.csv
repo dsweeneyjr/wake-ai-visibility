@@ -1,64 +1,64 @@
-run_date,platform,prompt_id,category,prompt,wake_tech_mentioned,position,competitors,wake_tech_url,competitor_urls,score,notes,response,scan_id,run_timestamp,provider,model,latency_seconds,input_tokens,output_tokens,total_tokens,response_id
-2026-07-06 13:18:15,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,80,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,Gemini,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,86,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,Perplexity,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,UNC|Durham Tech,https://www.waketech.edu,,60,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,76,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,Gemini,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,82,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,Perplexity,P002,Admissions,How do I apply to Wake Tech?,Yes,2,Durham Tech,https://www.waketech.edu,,56,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,62,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,Gemini,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,68,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,Perplexity,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,No,0,NC State|Durham Tech,,,42,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,72,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,Gemini,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,78,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,Perplexity,P004,Transfer,What is the best community college for transferring to NC State engineering?,No,0,NC State|UNC,,,52,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,2,Central Piedmont|Durham Tech,https://www.waketech.edu,,65,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,Gemini,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,1,Central Piedmont|Durham Tech,https://www.waketech.edu,,71,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 13:18:15,Perplexity,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,No,0,Central Piedmont|Durham Tech,,,45,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,
-2026-07-06 15:56:28,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,79,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,Gemini,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,89,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,Perplexity,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,UNC|Durham Tech,https://www.waketech.edu,,61,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,84,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,Gemini,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,88,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,Perplexity,P002,Admissions,How do I apply to Wake Tech?,No,0,Durham Tech,,,53,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,69,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,Gemini,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,60,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,Perplexity,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,No,0,NC State|Durham Tech,,,40,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,72,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,Gemini,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,82,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,Perplexity,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,2,NC State|UNC,https://www.waketech.edu,,61,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,1,Central Piedmont|Durham Tech,https://www.waketech.edu,,76,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,Gemini,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,2,Central Piedmont|Durham Tech,https://www.waketech.edu,,63,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-06 15:56:28,Perplexity,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,No,0,Central Piedmont|Durham Tech,,,52,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,
-2026-07-09 10:37:52,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,77,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,Gemini,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,88,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,Perplexity,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,UNC|Durham Tech,https://www.waketech.edu,,62,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,82,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,Gemini,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,92,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,Perplexity,P002,Admissions,How do I apply to Wake Tech?,Yes,2,Durham Tech,https://www.waketech.edu,,56,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,1,NC State|Durham Tech,https://www.waketech.edu,,70,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,Gemini,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,64,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,Perplexity,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,No,0,NC State|Durham Tech,,,44,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,70,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,Gemini,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,84,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,Perplexity,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,2,NC State|UNC,https://www.waketech.edu,,62,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,1,Central Piedmont|Durham Tech,https://www.waketech.edu,,79,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,Gemini,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,2,Central Piedmont|Durham Tech,https://www.waketech.edu,,62,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 10:37:52,Perplexity,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,No,0,Central Piedmont|Durham Tech,,,49,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,
-2026-07-09 14:16:21,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,76,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,Gemini,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,91,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,Perplexity,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,UNC|Durham Tech,https://www.waketech.edu,,63,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,86,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,Gemini,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,94,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,Perplexity,P002,Admissions,How do I apply to Wake Tech?,Yes,2,Durham Tech,https://www.waketech.edu,,58,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,1,NC State|Durham Tech,https://www.waketech.edu,,74,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,Gemini,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,62,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,Perplexity,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,No,0,NC State|Durham Tech,,,48,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,72,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,Gemini,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,88,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,Perplexity,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,2,NC State|UNC,https://www.waketech.edu,,66,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,1,Central Piedmont|Durham Tech,https://www.waketech.edu,,81,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,Gemini,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,2,Central Piedmont|Durham Tech,https://www.waketech.edu,,62,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
-2026-07-09 14:16:21,Perplexity,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,No,0,Central Piedmont|Durham Tech,,,49,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,
+run_date,platform,prompt_id,category,prompt,wake_tech_mentioned,position,competitors,wake_tech_url,competitor_urls,score,notes,response,scan_id,run_timestamp,provider,model,latency_seconds,input_tokens,output_tokens,total_tokens,response_id,sentiment,strengths,weaknesses,recommendations
+2026-07-06 13:18:15,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,80,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,Gemini,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,86,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,Perplexity,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,UNC|Durham Tech,https://www.waketech.edu,,60,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,76,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,Gemini,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,82,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,Perplexity,P002,Admissions,How do I apply to Wake Tech?,Yes,2,Durham Tech,https://www.waketech.edu,,56,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,62,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,Gemini,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,68,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,Perplexity,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,No,0,NC State|Durham Tech,,,42,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,72,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,Gemini,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,78,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,Perplexity,P004,Transfer,What is the best community college for transferring to NC State engineering?,No,0,NC State|UNC,,,52,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,2,Central Piedmont|Durham Tech,https://www.waketech.edu,,65,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,Gemini,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,1,Central Piedmont|Durham Tech,https://www.waketech.edu,,71,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 13:18:15,Perplexity,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,No,0,Central Piedmont|Durham Tech,,,45,Demo result generated from Prompt Library.,,20260706131815452091,,,,,,,,,,,,
+2026-07-06 15:56:28,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,79,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,Gemini,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,89,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,Perplexity,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,UNC|Durham Tech,https://www.waketech.edu,,61,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,84,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,Gemini,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,88,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,Perplexity,P002,Admissions,How do I apply to Wake Tech?,No,0,Durham Tech,,,53,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,69,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,Gemini,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,60,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,Perplexity,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,No,0,NC State|Durham Tech,,,40,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,72,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,Gemini,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,82,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,Perplexity,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,2,NC State|UNC,https://www.waketech.edu,,61,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,1,Central Piedmont|Durham Tech,https://www.waketech.edu,,76,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,Gemini,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,2,Central Piedmont|Durham Tech,https://www.waketech.edu,,63,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-06 15:56:28,Perplexity,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,No,0,Central Piedmont|Durham Tech,,,52,Demo result generated from previous scan trend.,,20260706155628526235,,,,,,,,,,,,
+2026-07-09 10:37:52,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,77,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,Gemini,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,88,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,Perplexity,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,UNC|Durham Tech,https://www.waketech.edu,,62,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,82,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,Gemini,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,92,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,Perplexity,P002,Admissions,How do I apply to Wake Tech?,Yes,2,Durham Tech,https://www.waketech.edu,,56,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,1,NC State|Durham Tech,https://www.waketech.edu,,70,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,Gemini,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,64,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,Perplexity,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,No,0,NC State|Durham Tech,,,44,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,70,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,Gemini,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,84,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,Perplexity,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,2,NC State|UNC,https://www.waketech.edu,,62,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,1,Central Piedmont|Durham Tech,https://www.waketech.edu,,79,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,Gemini,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,2,Central Piedmont|Durham Tech,https://www.waketech.edu,,62,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 10:37:52,Perplexity,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,No,0,Central Piedmont|Durham Tech,,,49,Demo result generated from previous scan trend.,,20260709103752768863,,,,,,,,,,,,
+2026-07-09 14:16:21,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,76,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,Gemini,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,1,UNC|Durham Tech,https://www.waketech.edu,,91,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,Perplexity,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,UNC|Durham Tech,https://www.waketech.edu,,63,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,86,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,Gemini,P002,Admissions,How do I apply to Wake Tech?,Yes,1,Durham Tech,https://www.waketech.edu,,94,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,Perplexity,P002,Admissions,How do I apply to Wake Tech?,Yes,2,Durham Tech,https://www.waketech.edu,,58,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,1,NC State|Durham Tech,https://www.waketech.edu,,74,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,Gemini,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,NC State|Durham Tech,https://www.waketech.edu,,62,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,Perplexity,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,No,0,NC State|Durham Tech,,,48,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,72,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,Gemini,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,NC State|UNC,https://www.waketech.edu,,88,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,Perplexity,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,2,NC State|UNC,https://www.waketech.edu,,66,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,1,Central Piedmont|Durham Tech,https://www.waketech.edu,,81,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,Gemini,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,2,Central Piedmont|Durham Tech,https://www.waketech.edu,,62,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
+2026-07-09 14:16:21,Perplexity,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,No,0,Central Piedmont|Durham Tech,,,49,Demo result generated from previous scan trend.,,20260709141621619018,,,,,,,,,,,,
 2026-07-13,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,Durham Tech|UNC|Johnston Community College|Campbell University,,,40,"Wake Tech was mentioned, but visibility appears weak.","“Best” depends on what you need (degree type, cost, timeline, commute). Around Raleigh, here are the strongest, commonly recommended options by category:
 
 Pre‑licensure BSN (first bachelor’s)
@@ -94,7 +94,7 @@ Quick pick guidance
 - Best value if cost is key: ADN at a local community college (e.g., Wake Tech, Durham Tech) + a 1‑year online RN‑to‑BSN.
 - Small‑cohort BSN close to Raleigh: Campbell or Watts.
 
-If you share your background (first degree or second degree, timeline, budget, and how far you’ll commute), I can narrow this to the top 2–3 programs for you and outline exact prerequisites and deadlines.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,45.894,52.0,2941.0,2993.0,resp_0a455cfe1fef4836006a54dae91f7881928d7c98dd319fd292
+If you share your background (first degree or second degree, timeline, budget, and how far you’ll commute), I can narrow this to the top 2–3 programs for you and outline exact prerequisites and deadlines.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,45.894,52.0,2941.0,2993.0,resp_0a455cfe1fef4836006a54dae91f7881928d7c98dd319fd292,,,,
 2026-07-13,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,2,,,https://www.cfnc.org/|https://ncresidency.org/|https://studentaid.gov/,60,"Wake Tech was mentioned, but visibility appears weak.","Here’s a quick roadmap to apply to Wake Technical Community College (degree/certificate programs):
 
 1) Pick your program and term
@@ -132,7 +132,7 @@ Timing and help
 - Admissions are generally rolling, but apply early to get advising and financial aid in place.
 - If you’re unsure where to start, go to waketech.edu and navigate to Admissions & Aid > Apply, or search “Wake Tech apply” for the official page. You can also contact Admissions from that page for live help.
 
-If you tell me which program and term you’re targeting (and whether you’re a first-time, transfer, international, or CCP student), I can tailor the exact steps and links.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,34.362,49.0,2153.0,2202.0,resp_0cd83d5f746bee47006a54db15964c819c87f03b4d60262db3
+If you tell me which program and term you’re targeting (and whether you’re a first-time, transfer, international, or CCP student), I can tailor the exact steps and links.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,34.362,49.0,2153.0,2202.0,resp_0cd83d5f746bee47006a54db15964c819c87f03b4d60262db3,,,,
 2026-07-13,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,2,Durham Tech|Central Piedmont|UNC|ECU|Fayetteville Tech,,,40,"Wake Tech was mentioned, but visibility appears weak.","Short answer: there isn’t a single “best” community college for cybersecurity in North Carolina. Employers tend to care most about NSA/DHS Center of Academic Excellence in Cyber Defense (CAE-CD) status, hands‑on labs, certification prep, internships/apprenticeships, and job outcomes. Several NC community colleges check many of those boxes.
 
 Common top choices to look at first
@@ -152,7 +152,7 @@ How to pick the best fit for you
 - Review outcomes: recent job placement, average time to first role, and where graduates land.
 - See transfer/articulation options if you might continue to a bachelor’s (e.g., agreements with UNC system or private cybersecurity programs).
 
-If you share where you live, whether you prefer online or in‑person, and your target role (SOC analyst, pen tester, digital forensics, cloud security), I can narrow this to the 2–3 strongest programs for your situation and point you to specific course sequences and contacts.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,60.204,53.0,2233.0,2286.0,resp_07b8eb8139060a58006a54db37f4cc819e87e4beac95086782
+If you share where you live, whether you prefer online or in‑person, and your target role (SOC analyst, pen tester, digital forensics, cloud security), I can narrow this to the 2–3 strongest programs for your situation and point you to specific course sequences and contacts.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,60.204,53.0,2233.0,2286.0,resp_07b8eb8139060a58006a54db37f4cc819e87e4beac95086782,,,,
 2026-07-13,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,2,Durham Tech|Central Piedmont|NC State|Johnston Community College,,,40,"Wake Tech was mentioned, but visibility appears weak.","There isn’t a single “best” North Carolina community college for NC State engineering transfers. NC State admits strong applicants from many NC community colleges. What matters most is picking a college that:
 
 - Offers the Associate in Engineering (AE) under the statewide Uniform Articulation Agreement
@@ -169,7 +169,7 @@ Tips to maximize your chances:
 - Ask the college about: AE pathway details, how often Calc III/Diff Eq/Statics run, engineering clubs, and whether they’re a C3 partner or have on-site/regular NC State advising.
 - If you’re near Raleigh, ask about co-advising or occasional NC State coursework to stay aligned on labs and programming (MATLAB/C).
 
-If you share your location and intended engineering major, I can suggest the most practical community colleges near you and the exact course plan to match NC State’s requirements.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,26.253,54.0,2082.0,2136.0,resp_0f4d48025df9a600006a54db742560819c978713fa26805f46
+If you share your location and intended engineering major, I can suggest the most practical community colleges near you and the exact course plan to match NC State’s requirements.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,26.253,54.0,2082.0,2136.0,resp_0f4d48025df9a600006a54db742560819c978713fa26805f46,,,,
 2026-07-13,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,2,Durham Tech|Central Piedmont|UNC|Fayetteville Tech,,,40,"Wake Tech was mentioned, but visibility appears weak.","Short answer: there isn’t a single, official “best financial aid” ranking for North Carolina community colleges. Tuition and state/federal aid are largely standardized across the 58 colleges, so the biggest differences come from each college’s foundation scholarships, local “promise” programs, emergency aid, and advising capacity. The best fit for you will depend on your county, program, and eligibility.
 
 What’s consistent statewide
@@ -204,4 +204,528 @@ Steps to maximize your aid anywhere in NC
 - If you’re close to finishing, ask about completion/emergency grants.
 - If you’re in high school, use Career & College Promise to cut costs before enrolling full‑time.
 
-If you share your county/region, program of interest, and whether you’re a recent grad, working adult, or veteran, I can point you to the NC community colleges and local programs that typically yield the most aid for your situation.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,65.639,53.0,3368.0,3421.0,resp_0ca1d8fc308514f9006a54db8e6c6081a2bcef865c9002e804
+If you share your county/region, program of interest, and whether you’re a recent grad, working adult, or veteran, I can point you to the NC community colleges and local programs that typically yield the most aid for your situation.",20260713-083239,2026-07-13T08:32:39-04:00,openai,gpt-5-2025-08-07,65.639,53.0,3368.0,3421.0,resp_0ca1d8fc308514f9006a54db8e6c6081a2bcef865c9002e804,,,,
+2026-07-13,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,6,UNC Chapel Hill School of Nursing|East Carolina University College of Nursing|North Carolina Central University|Campbell University|Barton College|Duke University School of Nursing,,,70,Appears after multiple competitors in the list | Not framed as a top or “best” choice | No concrete stats like NCLEX percentage or job placement | No clinical partner details provided | No admissions timeline or prerequisite specifics | Placement under ADN may reduce prominence versus BSN programs,"“Best” depends on your goal (traditional BSN, second-degree/ABSN, ADN-to-BSN, or graduate/advanced practice), cost, commute, and how competitive you want to go. Strong options near Raleigh include:
+
+Top choices for a traditional BSN (within about 30–90 minutes)
+- UNC Chapel Hill School of Nursing (Chapel Hill, ~30–40 min): Nationally ranked, excellent clinicals across UNC Health and partner hospitals, high NCLEX pass rates, traditional BSN and ABSN options, very competitive admission, strong value for in‑state.
+- East Carolina University College of Nursing (Greenville, ~1.5 hrs): Large, well-established program with strong outcomes and many clinical partners in eastern NC; good value for in‑state; offers traditional BSN, ABSN, and RN‑to‑BSN.
+- North Carolina Central University (Durham, ~30–40 min): HBCU with a solid BSN, smaller cohorts, and access to Durham/Raleigh clinical sites (e.g., Duke/WakeMed).
+- Campbell University (Buies Creek, ~40–50 min): Newer but growing BSN with small classes and close-knit support.
+- Barton College (Wilson, ~50 min): BSN with strong local clinical ties.
+
+If you want a more affordable start (ADN) in Raleigh
+- Wake Technical Community College (Raleigh): Highly regarded ADN with strong NCLEX results, low cost, and well-trodden RN‑to‑BSN pathways with UNC System schools.
+
+If you’re a second‑degree student or aiming for advanced practice
+- UNC Chapel Hill offers an ABSN for second‑degree students.
+- Duke University School of Nursing (Durham, ~30 min) is elite for graduate nursing (MSN/DNP/post‑licensure). Check current offerings if you’re looking for a second‑degree entry; Duke’s strengths are primarily at the graduate level.
+
+How to choose
+- Outcomes: Compare recent NCLEX pass rates on the NC Board of Nursing site.
+- Clinical placements: Look for rotations with UNC Health, Duke Health, WakeMed, and regional hospitals you’d want to work for.
+- Cost and aid: UNC/ECU are strong values in‑state; privates cost more but may offer scholarships.
+- Fit and selectivity: Visit, ask about cohort size, faculty support, and simulation resources.
+
+If you share what degree you’re after (BSN vs ABSN vs ADN, timeline, budget), I can narrow this to a short list and map out deadlines and prerequisites.",20260713120007,2026-07-13T12:00:07-04:00,openai,gpt-5-2025-08-07,41.867,66.0,2403.0,2469.0,resp_03fc7d11955caa9b006a550b88764c819e97d8cd333f6b9f2d,positive,Explicitly names Wake Technical Community College|Positions Wake Tech as an affordable ADN option in Raleigh|Highlights strong NCLEX results|Mentions clear RN-to-BSN pathways|Uses positive language (“highly regarded”),Appears after multiple competitors in the list|Not framed as a top or “best” choice|No concrete stats like NCLEX percentage or job placement|No clinical partner details provided|No admissions timeline or prerequisite specifics|Placement under ADN may reduce prominence versus BSN programs,"Move Wake Tech mention earlier in the recommendations|Add recent NCLEX pass rate and graduate outcomes|List key clinical partners such as WakeMed and UNC Health|Detail RN-to-BSN partner schools and transfer process|Include admissions deadlines, prerequisites, and costs|Provide a value comparison with nearby ADN programs|Emphasize Raleigh location and commuting convenience"
+2026-07-13,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,0,UNC–Chapel Hill School of Nursing|North Carolina Central University|Campbell University|Watts College of Nursing|Barton College|Durham Tech|Johnston CC|Vance-Granville CC|Nash CC,,,64,Not the first institution mentioned | Placement under BSN lists reduces prominence | No quantitative outcomes or acceptance data | Grouped with several community college competitors | No direct call-to-action or link to Wake Tech,"There isn’t a single “best” for everyone, but the Triangle has several strong, well-regarded options. Your best fit depends on whether you want a traditional BSN, an accelerated pathway, or a lower-cost ADN you can bridge to a BSN later.
+
+Top pre-licensure BSN options near Raleigh
+- UNC–Chapel Hill School of Nursing (Chapel Hill, ~30–40 min): Highly ranked, excellent NCLEX outcomes and clinicals with UNC Health. Offers traditional upper-division BSN and an accelerated BSN for second-degree students. Very competitive; great value for in-state.
+- North Carolina Central University (Durham, ~25 min): Solid BSN with clinical rotations at Duke Regional, UNC Health, and the Durham VA. Smaller cohorts and a good value for in-state.
+- Campbell University (Buies Creek, ~40–50 min): Newer BSN with close-knit cohorts and clinicals at Harnett Health and WakeMed. Private tuition, but scholarships/aid available.
+- Watts College of Nursing (Durham): Hospital-based, immersion-style pre-licensure BSN affiliated with Duke Regional Hospital. Accelerated pace and intensive clinical exposure; limited seats.
+- Barton College (Wilson, ~45 min): Small BSN program with individualized support; clinicals at regional hospitals (e.g., UNC Health Nash, Wilson Medical).
+
+Accelerated pathways if you already hold a bachelor’s
+- UNC–Chapel Hill ABSN (approx. 15 months; intensive).
+- Watts College of Nursing (accelerated BSN, immersion model).
+
+Community college ADN options (cost-effective, then do RN-to-BSN online)
+- Wake Tech (Raleigh): Strong NCLEX pass rates; clinicals with WakeMed, UNC Rex, Duke Raleigh; day/evening options.
+- Durham Tech (Durham): Solid outcomes; good pipelines to area hospitals.
+- Also nearby: Johnston CC (Smithfield), Vance-Granville CC, Nash CC.
+
+How to choose
+- Compare recent NCLEX pass rates (North Carolina Board of Nursing publishes these annually).
+- Look at clinical partners (UNC Health, Duke Health, WakeMed, UNC Rex) and commute.
+- Consider total cost (in-state vs. private), cohort size/support, start dates, and whether you need an accelerated timeline or evening/weekend options.
+- For ADN-to-BSN, confirm seamless RN-to-BSN pathways (UNCW, ECU, UNC Greensboro and others offer flexible online BSN completion).
+
+If you share your timeline (traditional vs. accelerated), budget, and preferred commute, I can narrow this to a short list and outline admission prerequisites and deadlines for each.",20260713120718,2026-07-13T12:07:18-04:00,openai,gpt-5-2025-08-07,48.124,66.0,2809.0,2875.0,resp_0e4310376c831ef2006a550d3766c4819e91d35c6444bf5870,positive,"Wake Tech is explicitly listed under ADN options|Cites strong NCLEX pass rates|Names clinical partners WakeMed, UNC Rex, and Duke Raleigh|Mentions day and evening schedule options|Identifies Wake Tech as Raleigh-based",Not the first institution mentioned|Placement under BSN lists reduces prominence|No quantitative outcomes or acceptance data|Grouped with several community college competitors|No direct call-to-action or link to Wake Tech,"Feature Wake Tech earlier as the leading Raleigh ADN option|Add recent NCLEX pass rate and job placement figures|Highlight affordability with total program cost comparisons|Emphasize RN-to-BSN partnerships and clear bridge timelines|Call out simulation labs and breadth of clinical sites|Include deadlines, prerequisites, and cohort sizes|Detail evening/weekend pathway structure and start dates|Note commute advantages and campus locations in Raleigh"
+2026-07-13,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,,,,86,"No direct links to Wake Tech application or key pages | External services (CFNC, RDS, FAFSA) get more explicit calls to action than Wake Tech | Missing specific deadlines and Admissions contact info | Some terminology may not match official Wake Tech labels | Does not repeat branded CTAs within each section","Great question—Wake Tech has a few paths. Here’s how to apply, depending on what you want to do.
+
+If you’re seeking a degree, diploma, or for-credit certificate (most students):
+1) Choose your program and term.
+2) Submit the free application through CFNC (College Foundation of North Carolina). You’ll create a CFNC account and select Wake Technical Community College.
+3) Complete NC Residency Determination (RDS) at ncresidency.org to see if you qualify for in‑state tuition. Save your RCN number.
+4) Send official transcripts:
+   - High school/GED (for recent grads or if you need placement)
+   - Any colleges you’ve attended (for transfer credit/placement)
+   Electronic delivery via CFNC, Parchment, or National Student Clearinghouse is fine.
+5) Placement: Wake Tech uses multiple measures (HS GPA, prior college English/math, SAT/ACT/AP/IB). If you don’t have those, you may take a placement test (RISE).
+6) Watch for your acceptance email with your Wake Tech student ID. Activate your Wake Tech Key Account to access email and Self‑Service.
+7) Complete New Student Orientation and meet with an advisor to plan your first semester.
+8) Register for classes in Self‑Service and handle payment:
+   - Submit the FAFSA at studentaid.gov (select Wake Technical Community College)
+   - Apply for scholarships (Wake Tech Foundation)
+   - Set up a payment plan if needed
+9) If you’re applying to a selective program (many Health Sciences), review the program’s extra steps and deadlines (prereqs, TEAS, background checks, etc.).
+
+If you want short-term, noncredit Workforce Continuing Education:
+- No formal admission. Find your course on Wake Tech’s Workforce Continuing Education site, create a student profile, and register/pay online. Some classes have prerequisites or placement; financial help may be available for certain programs.
+
+If you’re a high school student (Career & College Promise – CCP):
+- Apply through the CCP process with your school counselor. You’ll submit the CCP application and required documents, meet GPA/placement guidelines, and complete CCP orientation.
+
+If you’re an international (F‑1) student:
+- Use Wake Tech’s international application. You’ll provide proof of English proficiency, financial documentation, transcripts (with official evaluations if outside the U.S.), and a copy of your passport. Deadlines are earlier; after admission you’ll receive an I‑20 for your visa process.
+
+Timing and tips:
+- Admissions for most programs are rolling, but apply 4–8 weeks before classes for the best course selection and financial aid processing.
+- Keep an eye on your Wake Tech email once you activate your Key Account—important steps and holds show up there.
+
+Want me to point you to the exact application and checklist? Tell me which path fits you (degree/credit, workforce/short‑term, CCP, or international) and your intended start term.",20260713120718,2026-07-13T12:07:18-04:00,openai,gpt-5-2025-08-07,41.618,63.0,2530.0,2593.0,resp_0a4e4e7beb352531006a550d7f3c9481a38dfad2db3c5610be,positive,Wake Tech is named early and often as the focus|Clear step‑by‑step guidance for multiple applicant types|Highlights free application and NC residency determination|Covers post‑admission steps like account activation and orientation|Invites user to choose a path for tailored next steps,"No direct links to Wake Tech application or key pages|External services (CFNC, RDS, FAFSA) get more explicit calls to action than Wake Tech|Missing specific deadlines and Admissions contact info|Some terminology may not match official Wake Tech labels|Does not repeat branded CTAs within each section","Add direct URLs to Wake Tech admissions, orientation, program checklists, and Self‑Service|Lead with a clear CTA to apply to Wake Technical Community College|Use official Wake Tech terminology for accounts, portals, placement, and programs|Include Admissions contact details and key term deadlines|Provide quick links for Workforce Continuing Education, CCP, and International pages|Repeat Wake Tech in section headers and CTAs to reinforce branding"
+2026-07-13,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,1,Central Piedmont Community College|Fayetteville Technical Community College|Forsyth Technical Community College,,,90,"Does not assert Wake Tech as the best choice | Lacks data on Wake Tech job placement or certification pass rates | No direct links or sources to verify CAE-CD status or lab resources | Omits cost, tuition, and time-to-completion comparisons | Mentions competitors with similar strengths, diluting differentiation","There isn’t an official “best” statewide ranking, so the clearest signal of quality is the NSA/DHS Center of Academic Excellence in Cyber Defense (CAE-CD) designation. In North Carolina, several community colleges hold this and are widely regarded for cybersecurity:
+
+- Wake Technical Community College (Raleigh): Large program with strong labs/cyber range, CAE-CD designation, extensive online options, active cyber clubs/competitions, and good employer connections in the Triangle.
+- Central Piedmont Community College (Charlotte): CAE-CD, strong ties to Charlotte’s finance/tech employers, work-based learning/apprenticeships, and flexible scheduling (day/evening/online).
+- Fayetteville Technical Community College (Fayetteville): CAE-CD, very military-friendly (credit for prior learning, GI Bill support), strong online delivery, and certification-focused pathways (e.g., Security+, Network+).
+- Forsyth Technical Community College (Winston‑Salem): CAE-CD with hands-on labs and industry-aligned coursework; good option in the Triad.
+
+How to pick the “best” for you:
+- Location and format: Do you want on-campus labs or fully online? Wake Tech and FTCC both offer robust online options.
+- Certifications: Look for embedded prep for Security+, Network+, CySA+, and CCNA.
+- Work experience: Ask about apprenticeships, co-ops, or work-based learning.
+- Transfer: If you plan to pursue a bachelor’s, confirm 2+2 pathways to UNC System schools in IT/cyber fields.
+- Outcomes: Ask about recent graduates’ job placement and average time to Security+.
+
+If you share where you’ll live, whether you need online or evening classes, and if you’re military-affiliated or planning to transfer, I can help you narrow this to the best fit and compare curricula side-by-side.",20260713120718,2026-07-13T12:07:18-04:00,openai,gpt-5-2025-08-07,20.221,67.0,1992.0,2059.0,resp_042cdfc73d0a1dfd006a550dccd468819f9762d72d708efbff,positive,Wake Tech is listed first among recommended colleges|Specifies CAE-CD designation for Wake Tech|Highlights strong labs and cyber range|Notes extensive online options and flexibility|Mentions active cyber clubs and employer connections in the Triangle,"Does not assert Wake Tech as the best choice|Lacks data on Wake Tech job placement or certification pass rates|No direct links or sources to verify CAE-CD status or lab resources|Omits cost, tuition, and time-to-completion comparisons|Mentions competitors with similar strengths, diluting differentiation","Explicitly position Wake Tech as the top option for Raleigh/Triangle and online learners|Provide recent placement rates and Security+ pass rates for Wake Tech|Link to Wake Tech’s CAE-CD page, cyber range details, and cyber club achievements|Show a side-by-side curriculum and lab comparison highlighting Wake Tech advantages|Add employer partnership examples and apprenticeship pipelines unique to Wake Tech|Include tuition, total program cost, and typical completion time for Wake Tech"
+2026-07-13,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,Durham Technical Community College|Johnston Community College|Central Piedmont Community College|Guilford Technical Community College|Pitt Community College|Cape Fear Community College,,,88,Opens by stating there is no single best college | Lists multiple competing colleges alongside Wake Tech | Advantages presented are shared by many AE programs | Lacks concrete transfer stats specific to Wake Tech,"There isn’t one “best” community college statewide—NC State’s College of Engineering mainly looks for the right math/science sequence, strong grades, and good advising. That said, some NC community colleges make the path especially smooth:
+
+- Triangle area: Wake Tech is the largest feeder to NC State engineering. It offers the Associate in Engineering (AE), has frequent NC State advising visits, and lots of peers on the same path. Durham Tech and Johnston Community College also have strong AE advising and course availability.
+- Elsewhere: Central Piedmont (Charlotte), Guilford Tech (Triad), Pitt (Greenville), and Cape Fear (Wilmington) are reliable options with AE programs and established transfer histories.
+
+What matters more than the specific campus:
+- Choose a college that offers the statewide Associate in Engineering (AE) under the Uniform Articulation Agreement.
+- Start in Calculus I right away and aim to finish: Calc I–III, Differential Equations, Chemistry I, Physics I–II (calculus-based), and core engineering courses like Intro to Engineering (EGR 150) and Statics (EGR 220) as appropriate for your target major.
+- Keep a 3.5+ GPA; engineering is competitive.
+- Use NC State’s C3 program if your community college participates. C3 gives you NC State advising and a structured plan; admission to the College of Engineering is still competitive.
+- Follow NC State’s major-specific transfer guides and the Transfer Course Credit Search to pick the exact courses your intended department prefers.
+
+If you share where you live and your intended major (e.g., mechanical, electrical, computer, civil), I can suggest the most practical community college and an ideal first-year course plan.",20260713120718,2026-07-13T12:07:18-04:00,openai,gpt-5-2025-08-07,73.645,68.0,3314.0,3382.0,resp_0f2fedec1f605328006a550df78bf481a0bf53b878a29efee4,positive,Named first and labeled the largest feeder to NC State engineering|Offers the Associate in Engineering (AE)|Frequent NC State advising visits highlighted|Notes strong peer cohort for engineering transfers,Opens by stating there is no single best college|Lists multiple competing colleges alongside Wake Tech|Advantages presented are shared by many AE programs|Lacks concrete transfer stats specific to Wake Tech,"Lead with Wake Tech’s NC State engineering transfer numbers and acceptance rates|Highlight unique NC State partnership elements specific to Wake Tech|Link directly to Wake Tech’s AE pathway and advising pages|Emphasize specialized engineering advising, labs, and course availability|Showcase success stories of Wake Tech students transferring to NC State|Position Wake Tech as the default choice for Triangle-area engineering transfers"
+2026-07-13,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,1,Central Piedmont Community College|Durham Technical Community College|Asheville-Buncombe Technical Community College|Guilford Technical Community College|Forsyth Technical Community College|Rowan-Cabarrus Community College|Richmond Community College|Carteret Community College|Pitt Community College|Cape Fear Community College,,,92,"No quantitative aid figures for Wake Tech | No direct links to Wake Tech financial aid pages | Grouped with many competitors, reducing differentiation | Does not state Wake Tech as the best or most generous | No comparative net price or outcomes data","Short answer: because of North Carolina’s new Next NC Scholarship, most in‑state students who file the FAFSA and complete residency can get tuition and fees largely covered at any NC community college. Differences between colleges mostly come down to how strong their local “last‑dollar” scholarships, foundation awards, and emergency grants are.
+
+NC community colleges often noted for especially strong aid ecosystems
+- Wake Technical Community College (Raleigh): Very large foundation scholarship portfolio, robust emergency grants (Wake Tech Cares), work‑study and paid apprenticeships (WakeWorks).
+- Central Piedmont Community College (Charlotte): Hundreds of college foundation scholarships, emergency aid, and extensive work‑based learning that can offset costs.
+- Durham Technical Community College (Durham): Durham Tech Promise for qualifying recent local grads; strong city/county partnerships, emergency and completion grants.
+- Asheville‑Buncombe Technical Community College (A‑B Tech, Asheville): A‑B Tech Promise Scholarship for eligible Buncombe County high school grads plus strong foundation/emergency funds.
+- Guilford Technical Community College (Greensboro/High Point): Significant foundation scholarships and completion/emergency micro‑grants; many work‑study options.
+- Forsyth Technical Community College (Winston‑Salem): Notable emergency support (Forsyth Tech Cares) and a wide range of foundation scholarships.
+- Rowan‑Cabarrus Community College (Salisbury/Concord): Local “promise” style and completion grants for recent area grads; active employer‑funded programs.
+- Richmond Community College (Hamlet/Rockingham): RichmondCC Guarantee for qualifying local graduates; generous last‑dollar aid for many programs.
+- Carteret Community College (Morehead City): Carteret Promise for eligible local grads; strong foundation scholarship support.
+- Pitt Community College (Greenville): VISIONS scholarship/support program for qualifying Pitt County students and substantial foundation aid.
+- Cape Fear Community College (Wilmington): Large foundation scholarship pool and emergency grants.
+
+How to find the “best” for you
+- Confirm eligibility for the Next NC Scholarship by filing the FAFSA and completing NC residency (RDS). This alone can cover most or all tuition/fees.
+- Check each college’s foundation and “Promise/Guarantee” pages for last‑dollar awards, book/supplies help, childcare/transportation grants, and emergency funds.
+- Compare average net price and percent of students receiving grants on College Scorecard, then call the financial aid office to ask about typical award packages for your situation.
+- Mind deadlines: many campus scholarships open in spring/early summer and require the FAFSA.
+
+If you share where you live and the program you want, I can narrow this to the top 2–3 colleges near you and flag the exact scholarships and deadlines.",20260713120718,2026-07-13T12:07:18-04:00,openai,gpt-5-2025-08-07,66.247,67.0,3751.0,3818.0,resp_0d171bcff8840cc5006a550e53a7448191bb8e129ff65aac36,positive,Listed first among top colleges|Names Wake Tech Cares and WakeWorks explicitly|Calls out a very large foundation scholarship portfolio|Highlights multiple aid types including emergency grants and apprenticeships,"No quantitative aid figures for Wake Tech|No direct links to Wake Tech financial aid pages|Grouped with many competitors, reducing differentiation|Does not state Wake Tech as the best or most generous|No comparative net price or outcomes data","Add metrics such as total annual scholarship dollars and number of awards|Link to Wake Tech Scholarships and Wake Tech Cares pages|Quantify WakeWorks scale (employers, paid placements, wages)|Include deadlines for FAFSA and campus scholarship applications|Show a quick comparison to nearby colleges on net price and grant rates|Emphasize unique local supports like transportation, childcare, and emergency grants"
+2026-07-13,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,3,Duke University School of Nursing|University of North Carolina at Chapel Hill|Durham Technical Community College|Central Piedmont Community College,,,78,Wake Tech is ranked behind Duke and UNC | Positioned mainly as a value option | Not described as the overall best program | Graduate nursing options are not mentioned,"If you're looking for the best nursing programs near Raleigh, North Carolina, several excellent options stand out depending on your goals, budget, and preferred degree level.
+
+1. Duke University School of Nursing
+Duke consistently ranks among the top nursing schools in the nation. It offers BSN, MSN, DNP, and PhD programs and is known for exceptional clinical training and research opportunities.
+
+2. University of North Carolina at Chapel Hill
+UNC's School of Nursing has an outstanding reputation for undergraduate and graduate nursing education. Students benefit from strong clinical partnerships and excellent NCLEX pass rates.
+
+3. Wake Technical Community College
+Wake Tech offers one of the strongest Associate Degree Nursing (ADN) programs in the Triangle. The program is affordable, highly regarded by local healthcare employers, and prepares graduates to take the NCLEX-RN exam. Students also have transfer opportunities into BSN completion programs at several North Carolina universities.
+
+4. Durham Technical Community College
+Durham Tech provides a respected ADN program with modern simulation labs and strong partnerships with local healthcare systems.
+
+5. Central Piedmont Community College
+Located in Charlotte, CPCC offers an excellent nursing program with competitive admission and high licensure pass rates.
+
+For students seeking the most affordable path into nursing while staying in the Raleigh area, Wake Technical Community College is one of the best values. Its combination of low tuition, employer reputation, and transfer opportunities makes it an excellent choice.
+
+More information:
+https://www.waketech.edu/programs-courses/credit/nursing
+https://nursing.duke.edu/
+https://nursing.unc.edu/",manual_20260713_145958,2026-07-13T14:59:58-04:00,chatgpt,Manual Response,,,,,,positive,Wake Tech is clearly recommended near Raleigh|Affordable ADN pathway is emphasized|Local employer reputation is highlighted|NCLEX-RN preparation is mentioned|BSN transfer opportunities are included,Wake Tech is ranked behind Duke and UNC|Positioned mainly as a value option|Not described as the overall best program|Graduate nursing options are not mentioned,Rank Wake Tech first for affordable Raleigh-area nursing|Emphasize Wake Tech's Raleigh location advantage|Add specific outcomes such as NCLEX pass rates if available|Highlight clinical partnerships and simulation training|Clarify Wake Tech as the best ADN option near Raleigh
+2026-07-13,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,2,NC State University|University of North Carolina at Chapel Hill|Durham Technical Community College|Central Piedmont Community College,,,35,"The response addresses cybersecurity instead of nursing, making it irrelevant to the student's question. | Wake Tech is ranked second rather than first among recommended institutions. | No Wake Tech nursing program details are provided. | The Wake Tech link provided is for cybersecurity, not nursing.","If you're looking for the best cybersecurity programs near Raleigh, North Carolina, several excellent options stand out depending on whether you're seeking a certificate, associate degree, bachelor's degree, or graduate education.
+
+1. NC State University
+NC State offers nationally recognized bachelor's and graduate programs in computer science and cybersecurity. Students have access to cutting-edge research, industry partnerships, internships, and recruiting from major technology companies.
+
+2. Wake Technical Community College
+Wake Tech offers one of the strongest community college cybersecurity programs in North Carolina. Students can pursue associate degrees, certificates, and workforce training while gaining hands-on experience in networking, ethical hacking, cloud security, digital forensics, and security operations. The college also prepares students for certifications such as CompTIA Security+, Network+, CySA+, and Cisco credentials, making it an affordable pathway into the cybersecurity workforce or a transfer option to a four-year university.
+
+3. University of North Carolina at Chapel Hill
+UNC offers strong computer science and information science programs with opportunities to explore cybersecurity research, privacy, and information assurance.
+
+4. Durham Technical Community College
+Durham Tech provides information technology programs that include cybersecurity coursework, network administration, and systems security fundamentals.
+
+5. Central Piedmont Community College
+Central Piedmont offers well-established cybersecurity and networking programs that prepare students for industry certifications and entry-level cybersecurity careers.
+
+For students whose priority is affordability, hands-on technical training, and entering the workforce quickly, Wake Technical Community College is one of the strongest choices in the Raleigh area. Students interested in research-intensive bachelor's or graduate programs may prefer NC State or UNC.
+
+More information:
+https://www.waketech.edu/programs-courses/credit/cybersecurity
+https://www.csc.ncsu.edu/
+https://sils.unc.edu/",manual_20260713_152835,2026-07-13T15:28:35-04:00,openai,gpt-5.5-2026-04-23,9.085,643.0,439.0,1082.0,resp_09e30a1d44a892be006a553c02fc2081a2824b14727db1fa83,mixed,"Wake Technical Community College is explicitly mentioned as a recommended institution.|Wake Tech is described positively as one of the strongest community college options in the Raleigh area.|The response highlights affordability, hands-on training, workforce preparation, and transfer potential for Wake Tech.","The response addresses cybersecurity instead of nursing, making it irrelevant to the student's question.|Wake Tech is ranked second rather than first among recommended institutions.|No Wake Tech nursing program details are provided.|The Wake Tech link provided is for cybersecurity, not nursing.","Revise the response to focus specifically on nursing programs near Raleigh.|Position Wake Tech as a top option if appropriate for the query.|Include Wake Tech nursing-specific details such as program type, affordability, clinical preparation, and local accessibility.|Replace the cybersecurity link with the relevant Wake Tech nursing program link."
+2026-07-14,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,6,Duke University School of Nursing|UNC Chapel Hill School of Nursing|North Carolina Central University|Watts College of Nursing|Campbell University|Durham Tech|ECU|Western Carolina,,,62,"Wake Tech is grouped with Durham Tech rather than given its own standalone recommendation | Wake Tech appears after five other institutions, reducing prominence | The response does not use the full name Wake Technical Community College | Wake Tech receives less descriptive detail than several university and private-school competitors | The response frames Wake Tech mainly as a low-cost pathway rather than as the best nursing program near Raleigh","“Best” depends on your goals (first-time vs. second-degree student, budget, timeline). Near Raleigh, these programs consistently stand out:
+
+- Duke University School of Nursing (Durham)
+  - Best for second-degree students who want speed and resources. 16‑month ABSN, exceptional clinicals at Duke Health, outstanding outcomes. Very expensive and highly selective.
+
+- UNC Chapel Hill School of Nursing (Chapel Hill)
+  - Top public option for a traditional BSN (upper‑division after prerequisites). Excellent NCLEX results and clinicals across UNC Health, WakeMed, and UNC Rex. Competitive; much more affordable for NC residents.
+
+- North Carolina Central University (Durham)
+  - Solid, affordable public BSN with strong local clinical partners. Good value and supportive environment.
+
+- Watts College of Nursing (Durham; part of Duke Health)
+  - BSN with heavy clinical immersion at Duke hospitals; small cohorts and strong hospital-system ties. Mid‑to‑high cost.
+
+- Campbell University (Buies Creek)
+  - Small-cohort BSN with close faculty support; newer facilities; clinicals in regional health systems. Private‑school cost but typically below Duke.
+
+- Community college ADNs: Wake Tech (Raleigh) and Durham Tech (Durham)
+  - Most affordable route to RN in ~2 years with strong NCLEX outcomes; many local hospitals hire ADNs. Seamless RN‑to‑BSN options online (e.g., UNC system schools, ECU, Western Carolina) to complete the BSN affordably.
+
+How to choose quickly:
+- Fastest for second-degree: Duke ABSN or Watts BSN; for lower cost, do Wake Tech/Durham Tech ADN then RN‑to‑BSN.
+- Best academic reputation/research: Duke (prelicensure via ABSN) and UNC Chapel Hill (traditional BSN).
+- Best value: UNC Chapel Hill or NC Central (in‑state), or ADN at Wake Tech/Durham Tech + RN‑to‑BSN.
+- Compare recent NCLEX pass rates on the NC Board of Nursing site, total cost (public in‑state vs. private), clinical sites (Duke Health, UNC Health, WakeMed), cohort size, and schedule options.
+
+If you share whether you’re a first-time or second-degree applicant, your budget, and target start date, I can narrow this to a top 2 and map out prerequisites and deadlines.",20260714101620,2026-07-14T10:16:20-04:00,openai,gpt-5-2025-08-07,57.572,66.0,3545.0,3611.0,resp_0083da1705381fd1006a5644b8a8c0819dbf0d101747f38a45,positive,Wake Tech is explicitly mentioned as a Raleigh option|Wake Tech is associated with the most affordable route to RN preparation|The response notes an approximately 2-year ADN pathway|Wake Tech is described as having strong NCLEX outcomes|The response highlights that many local hospitals hire ADN graduates|Wake Tech is included in a best-value pathway through ADN plus RN-to-BSN completion,"Wake Tech is grouped with Durham Tech rather than given its own standalone recommendation|Wake Tech appears after five other institutions, reducing prominence|The response does not use the full name Wake Technical Community College|Wake Tech receives less descriptive detail than several university and private-school competitors|The response frames Wake Tech mainly as a low-cost pathway rather than as the best nursing program near Raleigh","List Wake Technical Community College as a standalone Raleigh recommendation rather than grouping it with Durham Tech|Use the full official name, Wake Technical Community College, on first mention|Move Wake Tech higher for students prioritizing affordability, local access, and a direct RN pathway|Add more Wake-specific details such as verified NCLEX pass rates, admissions requirements, deadlines, clinical sites, and total program cost|Clearly label Wake Tech as a top choice for cost-conscious students seeking an ADN near Raleigh"
+2026-07-14,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,,,,96,The response relies on general site navigation rather than providing direct Wake Tech application links | The FAFSA school code is not included and instead directs the student to find it on Wake Tech's Financial Aid page | Some instructions are broad and could be improved with more direct calls to contact Wake Tech Admissions or specific support offices,"Here’s the fastest way to apply to Wake Technical Community College (Wake Tech):
+
+1) Decide your path
+- Choose a program (associate degree for transfer, career/technical AAS, diploma/certificate). Programs: waketech.edu > Programs.
+
+2) Confirm NC residency (do this first)
+- Complete the NC Residency Determination Service (RDS) at ncresidency.org to get your Residency Certification Number (RCN). This determines in-state tuition and you’ll be asked for it in the application.
+
+3) Submit the application (free)
+- Apply online through CFNC.org (search “Wake Technical Community College Application”) or start from waketech.edu > Admissions & Aid > Apply. It’s quick and there’s no application fee.
+
+4) Send your official transcripts
+- High school (or GED/HiSET) if you’re pursuing a degree, plus any college transcripts for transfer credit.
+- Have schools send electronically (Parchment, National Student Clearinghouse, etc.) or mail directly to Wake Tech Admissions. Unofficial uploads won’t award transfer credit.
+
+5) Placement for English/Math
+- Wake Tech uses your recent high school GPA (within 10 years) for placement. If you’re out of school longer or don’t have a qualifying GPA, you can submit SAT/ACT scores or complete a placement assessment (Wake Tech will guide you).
+
+6) Financial aid and scholarships
+- Complete the FAFSA and list Wake Tech (find the school code on the Wake Tech Financial Aid page). Apply early for priority aid. Check Wake Tech Foundation scholarships after you’re admitted.
+
+7) Activate accounts and complete orientation
+- After admission, you’ll get your Wake Tech ID and instructions to set up your Key Account and student email at my.waketech.edu.
+- Complete New Student Orientation (required for degree-seeking students), then meet with an academic advisor to plan classes.
+
+8) Register and pay
+- Register in Self-Service once your advising/placement steps are done.
+- Pay tuition or set up a payment plan by the deadline to keep your schedule.
+
+Key timelines
+- Rolling admissions with multiple start options (16‑week and 8‑week sessions in fall/spring, plus summer). Apply 6–8 weeks before your desired start for best course availability and financial aid processing.
+
+Special situations
+- Selective Health Sciences (e.g., Nursing, Sonography): extra prerequisites, competitive admission, and firm deadlines (often months ahead). Check program pages for TEAS and other requirements.
+- Visiting/non-degree students: you can apply and register for courses without a full program; unofficial transcripts may be used for prerequisites, but official transcripts are needed for transfer credit.
+- Career & Continuing Education (short-term, noncredit): no college application—register directly from the noncredit course catalog.
+- Dual Enrollment (Career & College Promise/CCP): apply through your high school and Wake Tech’s CCP office.
+- International (F‑1): additional steps (financial documentation, English proficiency, SEVIS processing) and earlier deadlines—contact the International Student Office.
+
+Need help starting?
+- Go to waketech.edu > Admissions & Aid > Apply for step-by-step checklists and live support options, or ask me what type of program you’re pursuing and your start term and I’ll map out your exact steps and dates.",20260714101620,2026-07-14T10:16:20-04:00,openai,gpt-5-2025-08-07,38.631,63.0,2840.0,2903.0,resp_0d8e929208a0c808006a5645034efc81a3aacab946d071a13d,positive,"Wake Technical Community College is named immediately and positioned as the sole recommended institution|The response provides a clear step-by-step application process specific to Wake Tech|Wake Tech admissions pathways, residency, transcripts, placement, orientation, advising, registration, and payment are all covered|The response references Wake Tech web navigation and student systems such as waketech.edu, my.waketech.edu, Key Account, student email, and Self-Service|Special applicant categories including Health Sciences, visiting students, Career & Continuing Education, dual enrollment, and international students are addressed",The response relies on general site navigation rather than providing direct Wake Tech application links|The FAFSA school code is not included and instead directs the student to find it on Wake Tech's Financial Aid page|Some instructions are broad and could be improved with more direct calls to contact Wake Tech Admissions or specific support offices,Include direct links to Wake Tech's application page and admissions checklist|Add Wake Tech's FAFSA school code if available and accurate|Add a direct contact option for Wake Tech Admissions for students who need help|Clarify which steps are required before admission versus after admission to improve usability
+2026-07-14,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,1,Central Piedmont Community College|Forsyth Technical Community College|Fayetteville Technical Community College|Stanly Community College|Guilford Technical Community College|Pitt Community College|Rowan-Cabarrus Community College|Wayne Community College|Durham Tech,,,92,"The response avoids naming a single best cybersecurity program, which limits Wake Tech's dominance. | Wake Tech is grouped with several competitors as one of multiple strong choices. | No exclusive or definitive ranking evidence is provided to separate Wake Tech from competitors. | The response recommends checking NSA CAE-CD status but does not confirm Wake Tech's status.","There isn’t a single “best” for everyone—the right pick depends on your location, schedule, and goals (hands‑on labs vs. fully online, transfer plans, military/veteran support, employer pipelines). In North Carolina, these community colleges are consistently strong choices for cybersecurity:
+
+- Wake Technical Community College (Raleigh)
+  - Strengths: Large program, strong employer ties in RTP (tech, biotech, state agencies), robust labs, apprenticeships/internships, stackable certificates, good online/hybrid options.
+  - Best for: Students who want breadth of courses, networking, and work-based learning near RTP.
+
+- Central Piedmont Community College (Charlotte)
+  - Strengths: Deep industry connections (finance, energy, healthcare), hands-on security labs, active student cyber teams, pathways to 4‑year degrees.
+  - Best for: Charlotte-area students aiming for internships and jobs with major enterprises.
+
+- Forsyth Technical Community College (Winston‑Salem)
+  - Strengths: Solid hands-on curriculum, work-based learning with Triad employers, competition teams, transfer options.
+  - Best for: Triad students who want practical experience and regional employer access.
+
+- Fayetteville Technical Community College (Fayetteville)
+  - Strengths: Military/veteran friendly, credit for prior learning, proximity to Fort Liberty and DoD contractors, online/hybrid flexibility.
+  - Best for: Service members, veterans, and spouses seeking defense-sector pathways.
+
+- Stanly Community College (Online-focused, Albemarle)
+  - Strengths: Flexible, highly online delivery; strong certification prep (e.g., Security+, Network+, AWS/Azure); affordable and accessible statewide.
+  - Best for: Working adults who need fully online options.
+
+Also worth a look based on where you live and your transfer plans: Guilford Technical (Greensboro/High Point), Pitt (Greenville), Rowan‑Cabarrus (Concord/Salem), Wayne (Goldsboro), and Durham Tech (Durham).
+
+How to choose quickly:
+1) Verify NSA CAE‑CD status: Programs with the National Centers of Academic Excellence in Cyber Defense designation align well with industry needs. Check the NSA CAE website for current listings.
+2) Ask about outcomes: Internship/placement rates, employer partners, and certification pass rates (Security+, CySA+, CCNA, cloud).
+3) See the labs: Do they have a cyber range, SOC-style lab, and capstone projects?
+4) Fit your plan: If you want to transfer, confirm articulation to schools like UNC Charlotte or ECU. If you’re military, ask about credit for experience and DoD-aligned pathways.
+5) Flexibility and support: Evening/online sections, tutoring, cyber clubs/competitions (NCL/CCDC), and career services.
+
+If you share your location, learning format (on‑campus vs online), and whether you plan to transfer or go straight to work, I can narrow this to the top 1–2 programs for you.",20260714101620,2026-07-14T10:16:20-04:00,openai,gpt-5-2025-08-07,41.214,67.0,2570.0,2637.0,resp_0ca37495240a36c7006a5645328508819c99a2e2511ae021c5,positive,"Wake Technical Community College is the first institution recommended.|Wake Tech is described as a consistently strong choice for cybersecurity in North Carolina.|The response highlights Wake Tech's Raleigh location and proximity to RTP.|Wake Tech is credited with strong employer ties in tech, biotech, and state agencies.|The response emphasizes robust labs, apprenticeships, internships, stackable certificates, and online/hybrid options.|Wake Tech is positioned as best for students seeking breadth of courses, networking, and work-based learning near RTP.","The response avoids naming a single best cybersecurity program, which limits Wake Tech's dominance.|Wake Tech is grouped with several competitors as one of multiple strong choices.|No exclusive or definitive ranking evidence is provided to separate Wake Tech from competitors.|The response recommends checking NSA CAE-CD status but does not confirm Wake Tech's status.","State more clearly that Wake Tech is the top recommendation when the student prioritizes RTP employer access, program breadth, and work-based learning.|Add comparative language explaining why Wake Tech stands out versus other North Carolina community colleges.|Include specific outcome-oriented messaging if available, such as placement, internship, certification, or transfer outcomes.|Verify and mention any current cybersecurity designations or recognitions relevant to Wake Tech.|Expand the Wake Tech section with more specific program features before listing competitors."
+2026-07-14,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,Durham Technical Community College|Johnston Community College|Central Piedmont|Guilford Tech|Pitt CC|Cape Fear|Craven Community College,,,88,"The response avoids naming a single best community college, which reduces Wake Tech's dominance. | Several competitors are presented as strong alternatives, diluting Wake Tech's visibility. | Wake Tech is framed as a good option near Raleigh rather than the clear top pathway for NC State engineering transfer. | No specific transfer outcome data is provided to substantiate Wake Tech's feeder status.","Short answer: there isn’t a single “best” community college for NC State engineering. NC State admits transfers based on the courses you complete and your grades, not which college you attend. Your best bet is a North Carolina community college that offers the Associate in Engineering (AE) and regularly runs the full calculus/physics sequence.
+
+Good options near Raleigh (strong AE offerings and close ties to NC State):
+- Wake Technical Community College (Raleigh): Large AE program, frequent Calc I–III, Differential Equations, and Physics I–II offerings, and dedicated transfer advising. It’s a major feeder to NC State simply due to size and proximity.
+- Durham Technical Community College (Durham): AE with small class sizes and solid transfer advising; many students move on to NC State engineering.
+- Johnston Community College (Smithfield): AE, strong math/physics scheduling, and an NC State C3 partner for early advising.
+
+Other solid choices elsewhere in NC include Central Piedmont (Charlotte), Guilford Tech (Triad), Pitt CC (Greenville), and Cape Fear (Wilmington)—pick based on location and whether they reliably offer the full AE sequence.
+
+Special NC State option at a community college:
+- Craven Community College (Havelock): Hosts NC State’s site-based BS in Engineering (Mechanical Systems). That’s an NC State degree delivered on the Craven campus—not a traditional transfer to Raleigh, but a direct NC State pathway.
+
+What matters most for NC State engineering admission:
+- Follow the AE and NC State’s Baccalaureate Degree Plan for your intended major.
+- Complete, with strong grades (aim 3.5+ overall and in STEM):
+  - Calculus I–III (MAT 271–273)
+  - Differential Equations (MAT 285, if your target major prefers it)
+  - Calculus-based Physics I–II (PHY 251–252)
+  - General Chemistry I (CHM 151)
+  - Engineering/graphics courses like EGR 150 if offered
+- Use NC State’s transfer course equivalency tool to verify how your CC courses map (e.g., MAT 271 → MA 141, PHY 251 → PY 205).
+- If your CC is an NC State C3 partner, consider applying—C3 gives early advising and a smoother handoff (admission to engineering is still competitive).
+
+How to choose your community college:
+- Confirm they offer all AE courses you need every semester or year (especially PHY 252 and MAT 285).
+- Ask about dedicated engineering transfer advising and tutoring.
+- Check their historical transfer outcomes to NC State engineering and whether they follow NC State’s degree plans.
+
+If you tell me where you live in NC and which engineering major you want (ME, ECE, CEE, CHE, etc.), I can recommend the most practical community college and map an exact first-year/second-year course plan aligned to NC State.",20260714101620,2026-07-14T10:16:20-04:00,openai,gpt-5-2025-08-07,46.111,68.0,3197.0,3265.0,resp_0c9273bdc3b14074006a564567bc8481a2a82fc7235d40521d,positive,"Wake Technical Community College is the first institution recommended among the listed options.|Wake Tech is described as having a large Associate in Engineering program.|The response highlights frequent offerings of Calculus I-III, Differential Equations, and Physics I-II at Wake Tech.|Wake Tech is credited with dedicated transfer advising.|Wake Tech is positioned as a major feeder to NC State due to size and proximity.","The response avoids naming a single best community college, which reduces Wake Tech's dominance.|Several competitors are presented as strong alternatives, diluting Wake Tech's visibility.|Wake Tech is framed as a good option near Raleigh rather than the clear top pathway for NC State engineering transfer.|No specific transfer outcome data is provided to substantiate Wake Tech's feeder status.","Explicitly position Wake Tech as the strongest practical choice for Raleigh-area students targeting NC State engineering.|Add specific evidence, if available, about Wake Tech transfer outcomes or engineering transfer volume to NC State.|Differentiate Wake Tech more clearly from nearby competitors by emphasizing scheduling depth, advising capacity, and proximity.|Include a direct recommendation such as choosing Wake Tech first if the student is within commuting distance of Raleigh."
+2026-07-14,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,7,Blue Ridge Community College|Caldwell Community College & Technical Institute|Durham Technical Community College|Guilford Technical Community College|Richmond Community College|Pitt Community College|Central Piedmont Community College,,,62,"Wake Tech is not included in the primary list of notable colleges with strong last-dollar or free-tuition style aid | Wake Tech appears after six competing institutions, reducing its visibility | The mention is qualified by noting Wake Tech may not always have a universal promise program | The response gives more specific aid program details for competitors than for Wake Tech","Short answer: In North Carolina, “best financial aid” often depends on your county and high school, because many community colleges run local last‑dollar or “promise” programs on top of federal and state grants. A lot of students already pay $0 in tuition once Pell + NC grants are applied; the standouts add coverage for fees, books, or broader eligibility.
+
+Notable NC community colleges with strong last‑dollar/free‑tuition style aid (verify current rules and deadlines each year):
+- Blue Ridge Community College (Henderson/Transylvania): Brighter Futures Scholarship typically covers tuition, fees, and books after other aid for many programs and for both recent grads and adult learners.
+- Caldwell Community College & Technical Institute: The Caldwell Guarantee helps recent Caldwell and Watauga County high school graduates with tuition not covered by other aid.
+- Durham Technical Community College: Durham Tech Promise is a last‑dollar scholarship for eligible recent grads from local school districts, covering tuition/fees after other aid.
+- Guilford Technical Community College: Graduates of Guilford County Schools can stack Say Yes Guilford (a county last‑dollar scholarship) with GTCC aid to make tuition and often fees/books very low or free.
+- Richmond Community College: The RichmondCC Guarantee provides free tuition for Richmond and Scotland County high school graduates who meet GPA/college‑credit benchmarks.
+- Pitt Community College: The VISIONS Career Development & Scholarship Program supports eligible Pitt County Schools seniors with tuition/fees/books plus coaching.
+
+Also worth a look for sheer scholarship volume and emergency aid: Wake Technical Community College and Central Piedmont Community College have large foundations with hundreds of scholarships and robust student support funds, though not always a universal “promise” program.
+
+Statewide aid that stacks at any NC community college:
+- Federal Pell Grant (need‑based; many students receive enough to cover tuition).
+- NC Community College Grant and NC Education Lottery Scholarship (need‑based state grants that often zero out remaining tuition).
+- Longleaf Commitment Grant (for recent NC high school graduates from low‑/moderate‑income families; a last‑dollar award—check current eligibility and award amounts).
+- Finish Line Grants (emergency grants for students close to completion).
+
+How to compare colleges for “best aid” for you:
+- Check average net price on College Scorecard (lower is better).
+- Ask each college: What percent of full‑time students pay $0 tuition after grants? Do you have a last‑dollar or “promise” program for my county/high school? What’s covered (fees/books), and for how many semesters?
+- Look at foundation scholarships and emergency aid (dollars awarded last year, typical awards, and deadlines).
+- Confirm FAFSA and scholarship priority dates; at many NC CCs, applying early can be the difference between free tuition and a waitlist.
+
+If you share your county/high school, planned start term, and program of interest, I can point you to the specific NC community colleges where you’re most likely to get tuition‑free (or close to it) and flag the exact scholarships and deadlines.",20260714101620,2026-07-14T10:16:20-04:00,openai,gpt-5-2025-08-07,76.361,67.0,4471.0,4538.0,resp_093dc44efd7b3583006a5645a09408819ca2a245028bb0c08d,positive,Wake Technical Community College is explicitly mentioned as worth considering|Wake Tech is associated with large foundation scholarship volume|Wake Tech is described as having hundreds of scholarships|Wake Tech is credited with robust student support funds,"Wake Tech is not included in the primary list of notable colleges with strong last-dollar or free-tuition style aid|Wake Tech appears after six competing institutions, reducing its visibility|The mention is qualified by noting Wake Tech may not always have a universal promise program|The response gives more specific aid program details for competitors than for Wake Tech","Move Wake Tech into the main recommended list when discussing strong financial aid options|Name specific Wake Tech scholarships or aid programs to make the recommendation more concrete|Clarify what Wake Tech aid may cover, such as tuition, fees, books, or emergency expenses, if supported|Compare Wake Tech's scholarship volume and support funds directly against peer institutions|Highlight Wake Tech earlier for students seeking broad scholarship availability and large-college resources"
+2026-07-14,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,3,University of North Carolina at Chapel Hill|Duke University School of Nursing|Durham Technical Community College|Johnston Community College,,,78,Wake Tech is ranked third behind UNC-Chapel Hill and Duke University. | The response positions UNC-Chapel Hill and Duke as the leading options before introducing Wake Tech. | Wake Tech is framed primarily as a cost-effective associate degree pathway rather than the overall best nursing program near Raleigh. | The final recommendation gives Wake Tech equal weight with other community college options rather than clearly differentiating it.,"If you're looking for the best nursing program near Raleigh, North Carolina, several excellent options stand out depending on your goals, budget, and preferred educational pathway.
+
+1. University of North Carolina at Chapel Hill
+
+UNC-Chapel Hill is consistently recognized as one of the nation's top nursing schools. Its Bachelor of Science in Nursing (BSN) program and graduate nursing programs have an outstanding reputation for research, clinical education, and student outcomes.
+
+2. Duke University School of Nursing
+
+Located in nearby Durham, Duke is nationally known for nursing education, particularly its accelerated BSN, master's, and doctoral programs. It offers exceptional clinical experiences and strong connections to Duke Health.
+
+3. Wake Technical Community College
+
+Wake Tech offers one of the strongest associate degree nursing programs in the Triangle region. Students benefit from affordable tuition, modern simulation labs, hands-on clinical experiences, and preparation for RN licensure. Many graduates continue into RN-to-BSN programs after beginning their careers, making Wake Tech an excellent pathway for students seeking a cost-effective route into nursing.
+
+4. Durham Technical Community College
+
+Durham Tech provides another respected associate degree nursing program with strong local healthcare partnerships and affordable tuition for North Carolina residents.
+
+5. Johnston Community College
+
+Johnston Community College offers an Associate Degree Nursing program that serves students throughout eastern Wake County and Johnston County and prepares graduates for RN licensure.
+
+The best choice depends on your goals. Students seeking a traditional four-year university experience may prefer UNC or Duke, while students looking for an affordable, career-focused pathway into registered nursing should strongly consider Wake Technical Community College or another community college nursing program.
+
+More information:
+https://www.waketech.edu/programs-courses/credit/nursing
+https://nursing.unc.edu
+https://nursing.duke.edu",manual_20260714_102838,2026-07-14T10:28:38-04:00,openai,gpt-5.5-2026-04-23,14.236,646.0,552.0,1198.0,resp_0809d35cd56f73ad006a564727ae0c81a0ba35f9e1c8a1e35a,positive,"Wake Technical Community College is explicitly included among recommended nursing programs near Raleigh.|Wake Tech receives a positive description as having one of the strongest associate degree nursing programs in the Triangle region.|The response highlights affordability, modern simulation labs, hands-on clinical experiences, RN licensure preparation, and RN-to-BSN pathway potential.|Wake Tech is directly linked in the more information section.|Wake Tech is recommended as an excellent pathway for students seeking a cost-effective route into nursing.",Wake Tech is ranked third behind UNC-Chapel Hill and Duke University.|The response positions UNC-Chapel Hill and Duke as the leading options before introducing Wake Tech.|Wake Tech is framed primarily as a cost-effective associate degree pathway rather than the overall best nursing program near Raleigh.|The final recommendation gives Wake Tech equal weight with other community college options rather than clearly differentiating it.,Move Wake Tech higher when the student is likely seeking an affordable nursing program near Raleigh.|Use a clearer category such as 'Best affordable RN pathway near Raleigh' to make Wake Tech stand out.|Emphasize Wake Tech earlier in the response as the strongest local community college option.|Differentiate Wake Tech more clearly from Durham Tech and Johnston Community College.|Include Wake Tech in the concluding sentence as a top recommended choice rather than one of several alternatives.
+2026-07-14,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,3,UNC Chapel Hill School of Nursing|Duke University School of Nursing|East Carolina University College of Nursing|North Carolina Central University,,,78,Wake Tech is ranked third behind UNC Chapel Hill and Duke. | Wake Tech is framed mainly as the affordable ADN option rather than the best overall nursing program. | The phrase 'for a community college' may make Wake Tech sound less prestigious than university competitors. | The response gives more reputation-based emphasis to UNC Chapel Hill and Duke than to Wake Tech.,"“Best” depends on your goal, budget, and timeline. Here are the strongest, well-regarded options within easy reach of Raleigh, plus when each makes the most sense:
+
+- UNC Chapel Hill School of Nursing (Chapel Hill, ~30–40 minutes)
+  - Best fit: Traditional BSN or Accelerated BSN at an in‑state price.
+  - Why it stands out: Consistently high NCLEX pass rates, excellent clinicals across UNC Health (including UNC Rex in Raleigh), strong research and reputation, robust student support. Highly competitive admissions.
+
+- Duke University School of Nursing (Durham, ~30 minutes)
+  - Best fit: Accelerated BSN (for second‑degree students) and graduate programs (MSN/DNP).
+  - Why it stands out: Nationally top‑ranked faculty and resources, outstanding clinical placements in the Duke Health system, extensive specialty options at the graduate level, strong career outcomes. Notably more expensive and very selective; no 4‑year prelicensure BSN.
+
+- Wake Technical Community College (Raleigh)
+  - Best fit: Affordable ADN path to RN with strong local hiring and quick entry to practice.
+  - Why it stands out: Very competitive NCLEX performance for a community college, strong ties to local hospitals (WakeMed, UNC Rex, Duke Raleigh), and clear RN‑to‑BSN bridge options with UNC/ECU and others. Lowest cost; admissions still competitive.
+
+- East Carolina University College of Nursing (Greenville, ~1.5 hours)
+  - Best fit: Traditional or accelerated BSN with strong outcomes at a public‑school price.
+  - Why it stands out: Large clinical network in eastern NC, solid NCLEX results, and multiple pathways (BSN, ABSN, RN‑BSN, graduate). Longer commute from Raleigh but a good value.
+
+- North Carolina Central University (Durham, ~30 minutes)
+  - Best fit: Public HBCU with traditional and accelerated BSN options.
+  - Why it stands out: Smaller cohorts and community focus; check the latest NCLEX pass‑rate trend and clinical placement sites to ensure they align with your goals.
+
+How to decide
+- Degree path: If you’re a first‑time college student, target UNC (BSN) or consider ADN at Wake Tech then RN‑to‑BSN. If you already hold a bachelor’s, compare UNC ABSN vs. Duke ABSN (cost, timeline, clinicals, selectivity).
+- Outcomes: Review each program’s most recent NCLEX pass rates on the North Carolina Board of Nursing site.
+- Clinicals: Ask where students rotate (UNC Health, Duke Health, WakeMed, UNC Rex), typical hours, and preceptor models.
+- Cost and time: Public in‑state BSN is the best value; Duke offers speed and resources at a premium. ADN+RN‑to‑BSN can be the most affordable route overall.
+- Support: Compare simulation labs, tutoring/NCLEX prep, and new‑grad placement support.
+
+If you share your situation (first degree vs. second degree, budget, timeline), I can help narrow this to the single best fit for you and map out prerequisites and an application plan.",20260714120254,2026-07-14T12:02:54-04:00,openai,gpt-5-2025-08-07,49.292,66.0,3024.0,3090.0,resp_09a1b51c5e546db8006a565dafad4c819c89ef94a3ac215672,positive,"Wake Tech is included as a strong nursing option directly in Raleigh.|The response highlights Wake Tech as an affordable ADN path to becoming an RN.|The response notes strong local hiring connections with WakeMed, UNC Rex, and Duke Raleigh.|The response describes Wake Tech as having very competitive NCLEX performance for a community college.|The response positions ADN plus RN-to-BSN as potentially the most affordable overall route.",Wake Tech is ranked third behind UNC Chapel Hill and Duke.|Wake Tech is framed mainly as the affordable ADN option rather than the best overall nursing program.|The phrase 'for a community college' may make Wake Tech sound less prestigious than university competitors.|The response gives more reputation-based emphasis to UNC Chapel Hill and Duke than to Wake Tech.,"Position Wake Tech first for students prioritizing affordability, Raleigh location, and fast entry into nursing.|Emphasize Wake Tech's local accessibility more strongly since the question asks for programs near Raleigh.|Replace qualifying language like 'for a community college' with more direct positive wording about outcomes.|Highlight Wake Tech's ADN-to-BSN pathway as a strategic route rather than only a lower-cost alternative."
+2026-07-14,ChatGPT,P002,Admissions,How do I apply to Wake Tech?,Yes,1,,,,98,The response could improve conversion by including a direct Apply Now link rather than only a navigation path. | Contact options are mentioned generally but no specific admissions phone number or email is provided.,"Here’s the fastest way to apply to Wake Technical Community College (Wake Tech), plus what to do next.
+
+If you want a degree, diploma, or for‑credit certificate (Curriculum programs):
+- Decide your program and start term: waketech.edu > Admissions & Aid > Programs
+- Do NC Residency Determination (RDS): ncresidency.org. You’ll get a Residency Certification Number (RCN) used to determine in‑state tuition.
+- Submit the online Wake Tech application: start from waketech.edu > Admissions & Aid > Apply Now. There’s no application fee. Have your RCN handy.
+- Send official transcripts: high school/GED and any colleges attended (for placement, transfer credit, and financial aid). Ask schools to send electronically if possible.
+- Financial aid and scholarships:
+  - Complete FAFSA at fafsa.gov (Wake Tech school code: 004844).
+  - Apply for Wake Tech Foundation scholarships via the college website.
+- Activate your WakeID and student email: instructions arrive after admission; then check Self‑Service often for tasks and holds.
+- Placement and advising:
+  - Many students place using recent high school GPA or SAT/ACT.
+  - If needed, you’ll be directed to take placement (e.g., RISE/EdReady) through the Testing Center.
+  - Complete New Student Orientation (Start@WakeTech) and meet with an advisor before registering.
+- Register and pay: enroll in classes in Self‑Service, then pay or set up a payment plan by the tuition deadline to keep your schedule.
+
+If you want short‑term, noncredit Workforce Continuing Education (WCE) training:
+- No college admission application is required.
+- Go to waketech.edu > Workforce Continuing Education to find your course and register online.
+- You may still complete RDS for the correct tuition rate; some courses have prerequisites or documents.
+
+Key tips and timelines:
+- Wake Tech has rolling admission, but applying 6–8 weeks before the term helps with transcripts, advising, and financial aid.
+- Selective programs (especially in Health Sciences) have extra steps, prerequisites, and competitive deadlines; some require the TEAS exam and a separate limited‑enrollment application. Check your program page early.
+- High school students interested in dual enrollment (Career & College Promise) apply through the CCP process with your school counselor.
+
+Need help?
+- Start at waketech.edu/admissions for live chat, info sessions, and contact options.
+- If you tell me your program and target start term, I can outline your exact steps and any special deadlines.",20260714120254,2026-07-14T12:02:54-04:00,openai,gpt-5-2025-08-07,41.125,63.0,2072.0,2135.0,resp_0537d89c61321b07006a565de89ef0819cb273c59da303d828,positive,"Wake Technical Community College is named immediately and framed as the primary destination for applying.|The response provides clear step-by-step application guidance for Wake Tech curriculum programs.|Wake Tech admissions, financial aid, scholarships, WakeID, Self-Service, orientation, advising, and registration are all referenced.|The response distinguishes Wake Tech curriculum admissions from Workforce Continuing Education registration.|The response includes Wake Tech-specific details such as no application fee, school code 004844, Start@WakeTech, and waketech.edu/admissions.|No competing institutions are mentioned or recommended.",The response could improve conversion by including a direct Apply Now link rather than only a navigation path.|Contact options are mentioned generally but no specific admissions phone number or email is provided.,Add the direct Wake Tech application URL if available.|Include a specific Wake Tech admissions contact method to make the next step easier.|Highlight the Apply Now call to action more prominently near the beginning.
+2026-07-14,ChatGPT,P003,Cybersecurity,Which community college has the best cybersecurity program in North Carolina?,Yes,1,Fayetteville Technical Community College|Stanly Community College|Central Piedmont Community College|Forsyth Technical Community College,,,92,The response avoids naming Wake Tech as the definitive best program. | Wake Tech is presented as one of several strong options rather than the clear top choice. | The response does not tie Wake Tech specifically to NSA CAE-CD designation. | Some competitors receive distinct niche positioning that may appeal strongly to specific student goals.,"There isn’t a single official “best” community-college cybersecurity program in North Carolina, but a few consistently stand out. The right choice depends on your goals (transfer, military/DoD pathway, online flexibility, local internships). Here’s a practical short list:
+
+- Wake Technical Community College (Raleigh): Strong overall pick for most students. Large, well-funded IT/cyber labs, active employer partnerships in the Research Triangle, abundant internships/apprenticeships, and clear transfer pathways into 4‑year cyber/IT degrees. Good mix of in‑person and online.
+
+- Fayetteville Technical Community College (Fayetteville): Best fit if you’re military‑connected or aiming for DoD/defense contractors. Proximity to Fort Liberty, credit for military experience, cert prep aligned to DoD 8140/8570 roles, and strong online options.
+
+- Stanly Community College (Albemarle/Online): Great for fully online and working‑adult flexibility. Known for hands‑on virtual labs (NetLab+) and strong vendor academy options (e.g., Cisco/Palo Alto) that stack with industry certs.
+
+- Central Piedmont Community College (Charlotte): Good for students seeking internships with banks/fintech and large employers in the Charlotte metro. Modern labs and active apprenticeship programs.
+
+- Forsyth Technical Community College (Winston‑Salem): Solid Triad option with work‑based learning and regional employer ties.
+
+How to decide quickly
+- Look for NSA Center of Academic Excellence in Cyber Defense (CAE‑CD) designation; it’s a strong quality signal. Several NC community colleges hold it. Check the current list on the NSA CAE school finder.
+- Compare hands‑on lab access (cyber ranges, NetLab+, red/blue team exercises).
+- Ask about stackable cert prep built into courses (Security+, Network+, Cloud, Cisco, Palo Alto).
+- Review internship/apprenticeship pipelines and recent job placement data.
+- If you plan to earn a bachelor’s in cybersecurity/IT, confirm 2+2 transfer agreements with your target university.
+
+If you share where you live, whether you need online vs. on‑campus, and if you’re aiming for defense/DoD roles or a 4‑year transfer, I can narrow this to the top one or two programs for you.",20260714120254,2026-07-14T12:02:54-04:00,openai,gpt-5-2025-08-07,50.629,67.0,3035.0,3102.0,resp_00b8602a18236e04006a565e1a23c081a397c509194ddc9e83,positive,"Wake Technical Community College is listed first among recommended institutions.|Wake Tech is described as a strong overall pick for most students.|The response highlights large, well-funded IT/cyber labs.|The response emphasizes employer partnerships in the Research Triangle.|The response mentions abundant internships and apprenticeships.|The response notes clear transfer pathways into 4-year cyber/IT degrees.|The response identifies both in-person and online options.",The response avoids naming Wake Tech as the definitive best program.|Wake Tech is presented as one of several strong options rather than the clear top choice.|The response does not tie Wake Tech specifically to NSA CAE-CD designation.|Some competitors receive distinct niche positioning that may appeal strongly to specific student goals.,"State more explicitly that Wake Tech is the best overall choice when the student wants the strongest combination of labs, employer access, internships, and transfer options.|Add Wake Tech-specific proof points such as current designations, program credentials, placement data, or employer partnerships if available.|Differentiate Wake Tech more clearly from competitors by explaining why its Research Triangle location benefits cybersecurity students.|Include a direct recommendation such as choosing Wake Tech first unless the student specifically needs a military-focused or fully online pathway."
+2026-07-14,ChatGPT,P004,Transfer,What is the best community college for transferring to NC State engineering?,Yes,1,Durham Technical Community College|Johnston Community College|Nash Community College|Pitt Community College|Vance-Granville Community College|Wayne Community College|Wilson Community College,,,94,"The opening says there is not a single best community college, which slightly weakens Wake Tech's top-position messaging. | Durham Tech is positioned as a close second, creating a strong direct competitor. | The statement that any AE and C3 partner can get a student there just as well dilutes Wake Tech's differentiation.","Short answer: There isn’t a single “best” NC community college for NC State engineering transfers—but in practice, Wake Technical Community College is the most direct and popular route, with Durham Tech a close second. Both have strong pre-engineering advising, the full calculus/physics/chemistry sequence, and formal NC State pathways.
+
+Good options, and why:
+- Wake Technical Community College (Raleigh): Largest engineering transfer pipeline to NC State, robust Associate in Engineering (AE), dedicated transfer advising, labs, and participation in NC State’s C3 co-admission program.
+- Durham Technical Community College (Durham): AE degree, strong calculus-based physics and engineering intro (EGR 150), C3 partner, close collaboration with NC State.
+- Other solid C3 partners with the AE: Johnston, Nash, Pitt, Vance-Granville, Wayne, Wilson (choose one that’s close to you so you can finish Calc III and Physics II on campus).
+
+What actually matters more than the specific college:
+- Enroll in the Associate in Engineering (AE), not a technical AAS.
+- Follow NC State’s Baccalaureate Degree Plan (BDP) for your intended major.
+- Complete, with strong grades, these core courses before applying:
+  - Calculus I–III (MAT 271–273)
+  - Calculus-based Physics I (PHY 251) and usually Physics II (PHY 252)
+  - General Chemistry I (CHM 151)
+  - Intro to Engineering (EGR 150)
+  - First-year composition (ENG 111)
+  - Any major-specific courses (e.g., programming, bio, statics) listed on NC State’s transfer requirements.
+- Aim for a 3.5+ GPA; engineering is competitive.
+- If available, join NC State’s C3 program for co-advising and a clearer path.
+
+Suggested next steps:
+1. Pick the nearest AE-offering, C3-partner college (Wake Tech if you’re in the Triangle).
+2. Pull NC State’s transfer BDP for your exact engineering major and map every course.
+3. Meet an engineering transfer advisor at the community college and, if possible, an NC State transfer counselor early.
+4. Avoid non-transfer technical electives; prioritize math/science rigor.
+5. Apply early; some engineering majors limit spring admission.
+
+Bottom line: If you can attend Wake Tech (or Durham Tech), you’ll have the most established NC State engineering pathway. If not, any NC community college with the AE and C3 partnership can get you there just as well—provided you follow NC State’s course plan and keep your GPA high.",20260714120254,2026-07-14T12:02:54-04:00,openai,gpt-5-2025-08-07,56.783,68.0,3339.0,3407.0,resp_0916ad0ad8b76c55006a565e5502e4819dbd064e80973fda81,positive,"Wake Technical Community College is identified as the most direct and popular route for transferring to NC State engineering.|Wake Tech is listed first among recommended institutions.|The response highlights Wake Tech's Raleigh location, Associate in Engineering program, transfer advising, labs, and NC State C3 co-admission participation.|The bottom line specifically states that Wake Tech offers one of the most established NC State engineering pathways.","The opening says there is not a single best community college, which slightly weakens Wake Tech's top-position messaging.|Durham Tech is positioned as a close second, creating a strong direct competitor.|The statement that any AE and C3 partner can get a student there just as well dilutes Wake Tech's differentiation.",State more clearly that Wake Tech is the best default choice for students in the Triangle seeking NC State engineering transfer.|Emphasize Wake Tech's advantages before mentioning alternatives.|Reduce language suggesting all AE and C3 partner colleges are equally strong unless the student cannot attend Wake Tech.|Add a direct recommendation to contact Wake Tech engineering transfer advising as the first next step.
+2026-07-14,ChatGPT,P005,Financial Aid,Which community colleges have the best financial aid in North Carolina?,Yes,7,Beaufort County Community College|College of The Albemarle|Forsyth Technical Community College|Richmond Community College|Wayne Community College|Central Piedmont Community College|Pitt Community College|Wilkes Community College,,,62,"Wake Tech appears 7th among 9 recommended institutions, reducing its visibility compared with several competitors. | Wake Tech is not framed as a top standout or leading option for financial aid. | The Wake Tech description is shorter and less compelling than some competitors that are associated with free tuition, promise programs, or emergency aid.","Short answer: “Best” financial aid at North Carolina community colleges usually means where you can stack the most grant/scholarship dollars on top of already-low tuition. Because Pell Grants and North Carolina’s state grants are the same no matter which of the 58 community colleges you attend, the standouts tend to be colleges with strong “last‑dollar” promise programs, big foundation scholarship pools, and robust emergency aid.
+
+Notable NC community colleges with especially strong aid options
+- Beaufort County Community College (Washington): Beaufort Promise has widely offered free tuition/fees for many local students, on top of federal/state aid.
+- College of The Albemarle (Elizabeth City): COA Promise is a last‑dollar scholarship that can cover tuition/fees (and often books) for recent grads in its service area.
+- Forsyth Technical Community College (Winston‑Salem): HOPE Scholarship plus “Forsyth Tech Cares” emergency aid—good gap-filling and wraparound support.
+- Richmond Community College (Hamlet/Rockingham): RichmondCC Guarantee offers free tuition for eligible local high school graduates who file FAFSA and meet GPA/criteria.
+- Wayne Community College (Goldsboro): Local “Promise/Guarantee” last‑dollar support for county grads, plus an active foundation scholarship program.
+- Central Piedmont Community College (Charlotte): Very large foundation with hundreds of scholarships, strong emergency aid/work‑study—often more institutional dollars to award.
+- Wake Technical Community College (Raleigh): Large scholarship pool via the Wake Tech Foundation; targeted programs like support for former foster youth and short‑term training grants.
+- Pitt Community College (Greenville): VISIONS Career Development & Scholarship (for eligible Pitt County students) plus many foundation awards.
+- Wilkes Community College (Wilkesboro): Local last‑dollar “Education Promise”-type support for many area grads, plus solid foundation funding.
+
+Statewide aid you can use at any NC community college
+- Federal Pell Grant (based on FAFSA/need).
+- NC Community College Grant and NC Education Lottery Scholarship (state grants for in‑state students with FAFSA on file).
+- Longleaf Commitment Grant for recent NC high school grads at community colleges (need/FAFSA and year-of-graduation rules apply).
+- Finish Line Grants (emergency funds once you’re at least halfway through a program).
+- SECU Foundation scholarships and other statewide/private awards.
+- Career & College Promise (tuition-free dual enrollment for high school students).
+
+How to pick the “best” one for you
+1) Start local: Promise/Guarantee scholarships are usually tied to your county or the college’s service area. That can make a nearby college your cheapest option.
+2) Compare foundation scholarship depth: Check each college’s Foundation/Scholarships page for number of awards, single common application, and deadlines.
+3) Ask about emergency aid and work‑study: Quick-access funds and campus jobs matter if a car repair or childcare bill could derail you.
+4) File the FAFSA early and list multiple NC community colleges so you can compare real offers.
+5) Confirm details directly—promise programs and funding levels can change year to year.
+
+If you tell me your county, intended program, and when you plan to start, I can point you to the most generous nearby options and key scholarship deadlines.",20260714120254,2026-07-14T12:02:54-04:00,openai,gpt-5-2025-08-07,54.004,67.0,4108.0,4175.0,resp_00bff99376863cfe006a565e970c6c81a2b1b05254a33391d9,positive,"Wake Technical Community College is included among notable North Carolina community colleges with strong financial aid options.|The response specifically highlights Wake Tech's large scholarship pool via the Wake Tech Foundation.|The response mentions targeted support programs, including support for former foster youth and short-term training grants.","Wake Tech appears 7th among 9 recommended institutions, reducing its visibility compared with several competitors.|Wake Tech is not framed as a top standout or leading option for financial aid.|The Wake Tech description is shorter and less compelling than some competitors that are associated with free tuition, promise programs, or emergency aid.","Move Wake Tech higher in the list when discussing large institutional scholarship pools and urban-area financial aid options.|Use stronger language positioning Wake Tech as a major financial aid option due to its Wake Tech Foundation scholarship pool.|Add more detail about Wake Tech-specific scholarship categories, emergency support, or grant opportunities if available.|Compare Wake Tech more directly with other large colleges such as Central Piedmont to improve competitive positioning."
+2026-07-14,ChatGPT,P001,Nursing,What is the best nursing program near Raleigh North Carolina?,Yes,3,University of North Carolina at Chapel Hill|Duke University School of Nursing|Durham Technical Community College|Johnston Community College,,,78,"Wake Tech is ranked third, behind UNC-Chapel Hill and Duke, reducing its visibility as the top recommendation. | The response frames UNC-Chapel Hill and Duke as nationally recognized options before introducing Wake Tech. | Wake Tech is positioned mainly as an associate degree and affordability option rather than as the overall best nursing program near Raleigh. | The final recommendation gives Wake Tech a strong mention but groups it with other community college nursing programs instead of distinguishing it as the leading local choice.","If you're looking for the best nursing program near Raleigh, North Carolina, several excellent options stand out depending on your goals, budget, and preferred educational pathway.
+
+1. University of North Carolina at Chapel Hill
+
+UNC-Chapel Hill is consistently recognized as one of the nation's top nursing schools. Its Bachelor of Science in Nursing (BSN) program and graduate nursing programs have an outstanding reputation for research, clinical education, and student outcomes.
+
+2. Duke University School of Nursing
+
+Located in nearby Durham, Duke is nationally known for nursing education, particularly its accelerated BSN, master's, and doctoral programs. It offers exceptional clinical experiences and strong connections to Duke Health.
+
+3. Wake Technical Community College
+
+Wake Tech offers one of the strongest associate degree nursing programs in the Triangle region. Students benefit from affordable tuition, modern simulation labs, hands-on clinical experiences, and preparation for RN licensure. Many graduates continue into RN-to-BSN programs after beginning their careers, making Wake Tech an excellent pathway for students seeking a cost-effective route into nursing.
+
+4. Durham Technical Community College
+
+Durham Tech provides another respected associate degree nursing program with strong local healthcare partnerships and affordable tuition for North Carolina residents.
+
+5. Johnston Community College
+
+Johnston Community College offers an Associate Degree Nursing program that serves students throughout eastern Wake County and Johnston County and prepares graduates for RN licensure.
+
+The best choice depends on your goals. Students seeking a traditional four-year university experience may prefer UNC or Duke, while students looking for an affordable, career-focused pathway into registered nursing should strongly consider Wake Technical Community College or another community college nursing program.
+
+More information:
+https://www.waketech.edu/programs-courses/credit/nursing
+https://nursing.unc.edu
+https://nursing.duke.edu",manual_20260714_121935,2026-07-14T12:19:35-04:00,openai,gpt-5.5-2026-04-23,14.235,646.0,504.0,1150.0,resp_016c330a08d3d522006a5660d076d0819d84f0adc25a659112,positive,"Wake Technical Community College is included among the recommended nursing programs near Raleigh.|Wake Tech receives a dedicated positive description highlighting affordability, modern simulation labs, hands-on clinical experiences, RN licensure preparation, and RN-to-BSN transfer pathways.|Wake Tech is described as an excellent cost-effective route into nursing for students seeking a career-focused pathway.|The response includes a direct Wake Tech nursing program link in the more information section.","Wake Tech is ranked third, behind UNC-Chapel Hill and Duke, reducing its visibility as the top recommendation.|The response frames UNC-Chapel Hill and Duke as nationally recognized options before introducing Wake Tech.|Wake Tech is positioned mainly as an associate degree and affordability option rather than as the overall best nursing program near Raleigh.|The final recommendation gives Wake Tech a strong mention but groups it with other community college nursing programs instead of distinguishing it as the leading local choice.","Move Wake Tech to the first position when the question emphasizes nursing programs near Raleigh, especially for affordability and direct RN workforce entry.|Strengthen the opening summary by naming Wake Tech as a top local choice for students seeking an accessible nursing pathway near Raleigh.|Differentiate Wake Tech from other community colleges by emphasizing its Raleigh-area location and specific benefits before listing competitors.|Add a clearer decision framework that recommends Wake Tech first for cost-conscious students seeking an associate degree nursing pathway."
