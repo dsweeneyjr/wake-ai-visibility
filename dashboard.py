@@ -185,25 +185,58 @@ with st.container(border=True):
 
     scan_area = st.empty()
 
-admin_mode = st.sidebar.checkbox(
-    "Admin Mode",
-    value=False,
-)
-
-admin_password = ""
-
-if admin_mode:
-    admin_password = st.sidebar.text_input(
-        "Admin Password",
-        type="password",
-    )
+if "admin_authenticated" not in st.session_state:
+    st.session_state["admin_authenticated"] = False
 
 configured_admin_password = get_admin_password()
 
+if st.session_state["admin_authenticated"]:
+    st.sidebar.success("Admin access enabled.")
+
+    if st.sidebar.button(
+        "Sign Out",
+        use_container_width=True,
+    ):
+        st.session_state["admin_authenticated"] = False
+        st.session_state.pop(
+            "admin_password_input",
+            None,
+        )
+        st.rerun()
+
+else:
+    admin_mode = st.sidebar.checkbox(
+        "Admin Mode",
+        value=False,
+    )
+
+    if admin_mode:
+        admin_password = st.sidebar.text_input(
+            "Admin Password",
+            type="password",
+            key="admin_password_input",
+        )
+
+        if st.sidebar.button(
+            "Sign In",
+            use_container_width=True,
+        ):
+            if (
+                configured_admin_password
+                and admin_password == configured_admin_password
+            ):
+                st.session_state["admin_authenticated"] = True
+                st.rerun()
+            else:
+                st.sidebar.error(
+                    "Incorrect admin password."
+                )
+
 if (
-    admin_mode
-    and configured_admin_password
-    and admin_password == configured_admin_password
+    st.session_state.get(
+        "admin_authenticated",
+        False,
+    )
     and st.button(
         "▶ Run AI Search Evaluation",
         type="primary",

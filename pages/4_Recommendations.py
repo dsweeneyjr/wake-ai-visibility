@@ -1,5 +1,13 @@
 import pandas as pd
 import streamlit as st
+if not st.session_state.get(
+    "admin_authenticated",
+    False,
+):
+    st.warning(
+        "Please sign in from the Dashboard to use this tool."
+    )
+    st.stop()
 from components.styles import apply_wake_tech_style
 
 
