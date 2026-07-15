@@ -1,7 +1,7 @@
 import time
-from pathlib import Path
-
 import pandas as pd
+
+from services.database import load_results
 import streamlit as st
 
 from services.scan import run_live_scan
@@ -23,8 +23,14 @@ st.set_page_config(
 )
 apply_wake_tech_style()
 
-RESULTS_FILE = Path("data/results.csv")
-df = pd.read_csv(RESULTS_FILE)
+df = load_results()
+
+if df.empty:
+    st.warning(
+        "No AI search results have been collected yet."
+    )
+    st.stop()
+
 df["scan_id"] = df["scan_id"].astype(str)
 df["_row_order"] = range(len(df))
 
@@ -37,6 +43,7 @@ if "run_timestamp" in df.columns:
     df["scan_sort_date"] = (
         pd.to_datetime(
             df["run_timestamp"],
+            format="mixed",
             errors="coerce",
             utc=True,
         )
@@ -47,32 +54,23 @@ else:
 
 missing_scan_dates = df["scan_sort_date"].isna()
 
-fallback_dates = pd.to_datetime(
-    df.loc[missing_scan_dates, "scan_id"]
-    .astype(str)
-    .str.replace("-", "", regex=False)
-    .str[:14],
-    format="%Y%m%d%H%M%S",
-    errors="coerce",
-)
-
-df.loc[missing_scan_dates, "scan_sort_date"] = (
-    fallback_dates
-    .dt.tz_localize("America/New_York")
-)
-
-if "run_timestamp" in df.columns:
-    df["scan_sort_date"] = (
-        pd.to_datetime(
-            df["run_timestamp"],
-            errors="coerce",
-            utc=True,
-        )
-        .dt.tz_convert("America/New_York")
+if missing_scan_dates.any():
+    fallback_dates = pd.to_datetime(
+        df.loc[missing_scan_dates, "scan_id"]
+        .astype(str)
+        .str.replace("-", "", regex=False)
+        .str[:14],
+        format="%Y%m%d%H%M%S",
+        errors="coerce",
     )
-else:
-    df["scan_sort_date"] = df["run_date"]
 
+    df.loc[
+        missing_scan_dates,
+        "scan_sort_date",
+    ] = fallback_dates.dt.tz_localize(
+        "America/New_York"
+    )
+    
 st.title("Wake Tech AI Search Intelligence")
 st.caption(
     "Monitor how leading AI platforms recommend Wake Tech, "
