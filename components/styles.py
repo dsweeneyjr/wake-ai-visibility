@@ -60,6 +60,23 @@ def apply_wake_tech_style():
             color: #003057 !important;
         }
 
+                /* ========================================
+           SIDEBAR TEXT INPUTS
+        ======================================== */
+
+        section[data-testid="stSidebar"]
+        div[data-testid="stTextInput"] input {
+            color: #003057 !important;
+            background-color: #ffffff !important;
+            caret-color: #003057 !important;
+        }
+
+        section[data-testid="stSidebar"]
+        div[data-testid="stTextInput"] input::placeholder {
+            color: #6b7280 !important;
+            opacity: 1 !important;
+        }
+
 
         /* ========================================
            SIDEBAR MULTISELECT PILLS

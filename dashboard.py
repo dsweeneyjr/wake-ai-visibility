@@ -1,8 +1,29 @@
+import os
 import time
 import pandas as pd
 
 from services.database import load_results
 import streamlit as st
+
+def get_admin_password() -> str:
+    local_password = os.getenv(
+        "ADMIN_PASSWORD"
+    )
+
+    if local_password:
+        return local_password
+
+    try:
+        cloud_password = st.secrets.get(
+            "ADMIN_PASSWORD"
+        )
+
+        if cloud_password:
+            return str(cloud_password)
+    except Exception:
+        pass
+
+    return ""
 
 from services.scan import run_live_scan
 from components.executive_summary import show_executive_summary
@@ -70,8 +91,11 @@ if missing_scan_dates.any():
     ] = fallback_dates.dt.tz_localize(
         "America/New_York"
     )
-    
+
 st.title("Wake Tech AI Search Intelligence")
+st.caption(
+    "🚧 Executive Pilot Version"
+)
 st.caption(
     "Monitor how leading AI platforms recommend Wake Tech, "
     "identify visibility gaps, and track performance over time."
@@ -148,20 +172,43 @@ with st.container(border=True):
     )
 
     st.info(
-        "Run a live visibility scan to ask OpenAI the monitored student questions "
-        "and immediately analyze the results."
+        "Run an AI search evaluation to ask OpenAI the monitored student questions "
+        "and immediately analyze Wake Tech's visibility."
     )
     if latest_date is not None and pd.notna(latest_date):
-        st.caption(f"Last scan: {latest_date.strftime('%b %d, %Y at %I:%M %p')}")
+        st.caption(
+            f"Last evaluation: "
+            f"{latest_date.strftime('%b %d, %Y at %I:%M %p')}"
+        )
     else:
-        st.caption("Last scan: Not available yet")
+        st.caption("Last evaluation: Not available yet")
 
     scan_area = st.empty()
 
-if st.button(
-    "▶ Run Live Visibility Scan",
-    type="primary",
-    use_container_width=False,
+admin_mode = st.sidebar.checkbox(
+    "Admin Mode",
+    value=False,
+)
+
+admin_password = ""
+
+if admin_mode:
+    admin_password = st.sidebar.text_input(
+        "Admin Password",
+        type="password",
+    )
+
+configured_admin_password = get_admin_password()
+
+if (
+    admin_mode
+    and configured_admin_password
+    and admin_password == configured_admin_password
+    and st.button(
+        "▶ Run AI Search Evaluation",
+        type="primary",
+        use_container_width=False,
+    )
 ):
     progress = scan_area.progress(0)
     status = st.empty()
@@ -195,7 +242,7 @@ if st.button(
         )
 
     try:
-        with st.spinner("Running live AI visibility scan..."):
+        with st.spinner("Evaluating AI search visibility..."):
             scan = run_live_scan(
                 progress_callback=update_scan_progress
             )
@@ -204,7 +251,7 @@ if st.button(
 
         progress.progress(
             100,
-            text="Visibility scan complete",
+            text="Evaluation complete",
         )
 
         current_prompt_box.empty()
@@ -215,9 +262,9 @@ if st.button(
         )
 
         st.session_state["scan_message"] = (
-            f"Live scan complete. Added {scan['responses']} responses with "
-            f"an average visibility score of {scan['avg_score']}. "
-            f"OpenAI used {scan['total_tokens']:,} tokens."
+            f"AI search evaluation complete. "
+            f"Analyzed {scan['responses']} student questions with an "
+            f"average visibility score of {scan['avg_score']}."
         )
 
         st.rerun()
@@ -235,15 +282,15 @@ if st.button(
 
 
 with st.container(border=True):
-    st.subheader("Latest Scan")
+    st.subheader("Latest AI Search Evaluation")
 
     col1, col2, col3, col4 = st.columns(4)
 
     if latest_scan.empty or pd.isna(latest_date):
         col1.metric("Latest Date", "N/A")
         col2.metric("Provider", "N/A")
-        col3.metric("Responses", 0)
-        col4.metric("Avg Score", 0)
+        col3.metric("Questions Evaluated", 0)
+        col4.metric("Average Visibility", 0)
     else:
         col1.metric(
             "Latest Date",
@@ -273,19 +320,21 @@ with st.container(border=True):
         )
 
         col3.metric(
-            "Responses",
+            "Questions Evaluated",
             len(latest_scan)
         )
 
         col4.metric(
-            "Avg Score",
+            "Average Visibility",
             round(latest_scan["score"].mean(), 1)
         )
 
 st.subheader("AI Response Explorer")
 
 if latest_scan.empty:
-    st.info("Run a live visibility scan to view AI responses.")
+    st.info(
+        "Run an AI search evaluation to view the latest results."
+    )
 else:
     response_rows = latest_scan.sort_values(
         ["category", "prompt_id"]
@@ -357,16 +406,19 @@ else:
                     "N/A",
                 )
 
-            if pd.notna(total_tokens):
-                metric3.metric(
-                    "Response Length",
-                    f"{int(total_tokens):,} tokens",
-                )
+            ranking = response_row.get("position", 0)
+
+            if ranking == 1:
+                ranking_text = "#1"
+            elif ranking > 1:
+                ranking_text = f"#{int(ranking)}"
             else:
-                metric3.metric(
-                    "Response Length",
-                    "N/A",
-                )
+                ranking_text = "Not Ranked"
+
+            metric3.metric(
+                "Wake Tech Ranking",
+                ranking_text,
+            )
 
             st.divider()
             st.markdown("#### AI Evaluation")
@@ -447,5 +499,5 @@ show_insights(filtered)
 
 st.divider()
 
-with st.expander("View Results Data"):
+with st.expander("Detailed Results Data"):
     st.dataframe(filtered, width="stretch")
