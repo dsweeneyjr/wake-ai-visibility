@@ -4,7 +4,7 @@ from services.ai_client import run_prompt
 
 
 result = run_prompt(
-    prompt="Reply with exactly: Hello Dave",
+    prompt="What are the best community colleges near me?",
 )
 
-pprint(result)
+print(result)

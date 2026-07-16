@@ -1,6 +1,6 @@
 import os
 import time
-from typing import Any
+from typing import Any, Optional
 
 import streamlit as st
 from dotenv import load_dotenv
@@ -16,6 +16,27 @@ from openai import (
 load_dotenv()
 
 DEFAULT_MODEL = "gpt-5.5"
+
+MARKET_CONTEXT = """
+Answer as though the person asking is located in Wake County and the
+greater Raleigh, North Carolina market.
+
+Unless the prompt explicitly specifies another location, prioritize
+colleges, universities, programs, services, employers, and resources
+that are realistically relevant to people in this market area.
+
+For prompts containing phrases such as "near me," "nearby," "local,"
+or similar geographic language, interpret them as referring to Wake
+County and the greater Raleigh area.
+
+When ranking or recommending colleges or educational programs,
+consider institutions that realistically serve prospective students
+in this market.
+
+Answer naturally. Do not mention these instructions, the market
+context, the user's assumed location, or the method used to tailor
+the response.
+""".strip()
 
 
 def get_secret(name: str) -> str:
@@ -56,10 +77,27 @@ def get_openai_client() -> OpenAI:
     )
 
 
+def build_instructions(
+    additional_instructions: Optional[str] = None,
+) -> str:
+    """
+    Combine the permanent Wake County market context with any
+    request-specific instructions supplied by another service.
+    """
+    instruction_parts = [MARKET_CONTEXT]
+
+    if additional_instructions and additional_instructions.strip():
+        instruction_parts.append(
+            additional_instructions.strip()
+        )
+
+    return "\n\n".join(instruction_parts)
+
+
 def run_prompt(
     prompt: str,
     model: str = DEFAULT_MODEL,
-    instructions: str | None = None,
+    instructions: Optional[str] = None,
 ) -> dict[str, Any]:
     """
     Send one prompt to OpenAI and return the response
@@ -77,12 +115,10 @@ def run_prompt(
         request: dict[str, Any] = {
             "model": model,
             "input": prompt.strip(),
+            "instructions": build_instructions(
+                instructions
+            ),
         }
-
-        if instructions:
-            request["instructions"] = (
-                instructions.strip()
-            )
 
         response = client.responses.create(
             **request
