@@ -1,6 +1,6 @@
 from datetime import datetime
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Optional
 from zoneinfo import ZoneInfo
 
 import pandas as pd
@@ -17,11 +17,12 @@ MODEL = "gpt-5"
 
 
 def run_live_scan(
-    progress_callback: Callable[
-        [int, int, str, str, str],
-        None,
-    ]
-    | None = None,
+    progress_callback: Optional[
+        Callable[
+            [int, int, str, str, str],
+            None,
+        ]
+    ] = None,
 ) -> dict:
     """
     Run all monitored prompts against OpenAI, save the results
