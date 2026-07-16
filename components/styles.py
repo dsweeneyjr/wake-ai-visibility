@@ -47,6 +47,7 @@ def apply_wake_tech_style():
         section[data-testid="stSidebar"] a[aria-current="page"] * {
             color: #ffffff !important;
             font-weight: 700 !important;
+            text-transform: capitalize !important;
         }
 
 
